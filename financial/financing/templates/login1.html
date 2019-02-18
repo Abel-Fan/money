@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/login1.css' %}">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_995693_lzu6x56pkk.css">
+</head>
+<body>
+<main>
+<div class="logo_box">
+    <img src="{% static 'img/1.png' %}" alt="" class="logo" style="display:block; margin: 0 auto;">
+</div>
+    <div class="title_box" style="font-size: 0.23rem">
+    理 财 就 上 理 财 派
+    </div>
+    <div class="input_box" style="height: auto;">
+    <!--<div class="input_in_box">-->
+        <!--<div class="icon_box">-->
+            <!--<i class="iconfont icon-tel" style="font-size: 0.34rem; color: #ffffff" ></i>-->
+        <!--</div>-->
+        <form action="/login/" method="post" style="width: 5.54rem;height: 2.76rem; position:relative;display: flex;flex-wrap: wrap;justify-content: space-around;">
+            {% csrf_token %}
+            {{ form }}
+            <div class="btn_box btn_box1" style="position:absolute;left:0;right:0;margin:3.8rem auto;">
+                <button class="btn">立即登录</button>
+            </div>
+
+        </form>
+        <!--<div class="panduan_box">-->
+            <!--<i class="iconfont icon-duihao" style="font-size: 0.12rem; color: #ffffff" ></i>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="input_box">-->
+        <!--<div class="input_in_box">-->
+            <!--<div class="icon_box" style="background:-webkit-linear-gradient(top,#ffce84,#ffd89e)">-->
+                <!--<i class="iconfont icon-suo" style="font-size: 0.34rem; color: #ffffff" ></i>-->
+            <!--</div>-->
+            <!--<div class="panduan_box">-->
+                <!--<i class="iconfont icon-duihao" style="font-size: 0.12rem; color: #ffffff" ></i>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <div class="wenben_box" style="padding-right: 0.48rem;box-sizing: border-box;">
+        <a href="javascript:;" class="wz_tz" style="color:#a0c3fd; float: right; margin-top:0.24rem;">忘记密码怎么办?</a>
+    </div>
+    <div class="btn_box" >
+        <a href="/zhuce"  class="btn" style="background: #7ab1fc;margin-top:1.2rem;">账号注册</a>
+    </div>
+    </main>
+</body>
+</html>

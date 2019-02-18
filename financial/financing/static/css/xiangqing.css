@@ -1,0 +1,279 @@
+@import url(base.css);
+header{
+    width: 100%;
+    height: 1.3rem;
+    background: #4b98ff;
+    position: relative;
+}
+header .zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header a{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+    position: relative;
+}
+header  a img{
+    width: 0.3rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 30;
+}
+header .imgR{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-right: 0.24rem;
+    margin-top: 0.33rem;
+    float: right;
+    position: relative;
+}
+header .imgR img{
+    width: 0.3rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header .title{
+    width: 100%;
+    height: 0.9rem;
+    text-align: center;
+    line-height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+section{
+    width: 100%;
+    height: auto;
+    background: #f9f9f9;
+    padding: 0.2rem 0.24rem;
+    box-sizing: border-box;
+}
+section .content{
+    width: 100%;
+    height: 2.06rem;
+    background: #fdfdfd;
+    margin-top: 0.36rem;
+    box-sizing: border-box;
+    padding: 0.26rem 0.24rem;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+section .content .cTop{
+    width: 100%;
+    height: 0.46rem;
+    margin-bottom: 0.26rem;
+}
+section .content .cTop .wordL{
+    width: auto;
+    height: 100%;
+    float: left;
+    font-family: "苹方";
+    font-size: 0.3rem;
+    font-weight: bold;
+    line-height: 0.46rem;
+}
+section .content .cTop .wordM{
+    width: 1.14rem;
+    height: 100%;
+    border-radius: 0.23rem;
+    background: #feebee;
+    float: left;
+    margin-left: 0.33rem;
+    color: #ff466d;
+    font-family: "苹方";
+    font-size: 0.22rem;
+    text-align: center;
+    line-height: 0.46rem;
+}
+section .content .cTop .wordM1{
+    width: 1.14rem;
+    height: 100%;
+    border-radius: 0.23rem;
+    background: #eafbed;
+    float: left;
+    margin-left: 0.33rem;
+    color: #3de05c;
+    font-family: "苹方";
+    font-size: 0.22rem;
+    text-align: center;
+    line-height: 0.46rem;
+}
+section .content .cTop .wordR{
+    width: auto;
+    height: 100%;
+    float: right;
+    font-family: "苹方";
+    color: #b2b2b2;
+    font-size: 0.18rem;
+    line-height: 0.46rem;
+}
+section .content .cTop .wordR img{
+    margin-left: 0.1rem;
+    width: 0.2rem;
+    height: 0.13rem;
+}
+section .content .cBottom{
+    width: 100%;
+    height: 0.82rem;
+}
+section .content .cBottom .data{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+section .content .cBottom .data .dataB{
+    width: 1.43rem;
+    height: 100%;
+}
+section .content .cBottom .data .dataB .dataU{
+    width: 100%;
+    height: 0.48rem;
+    box-sizing: border-box;
+    padding-left: 0.17rem;
+    position: relative;
+}
+section .content .cBottom .data .dataB .dataU .circle{
+    width: 0.05rem;
+    height: 0.05rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #46a6ff;
+}
+section .content .cBottom .data .dataB .dataU .word{
+    width: 100%;
+    line-height: 0.48rem;
+    font-size: 0.22rem;
+    color: #989898;
+}
+section .content .cBottom .data .dataB .dataD{
+    box-sizing: border-box;
+    padding-left: 0.17rem;
+    font-size: 0.34rem;
+    font-weight: bold;
+}
+nav{
+    width: 100%;
+    height: 1.32rem;
+    box-sizing: border-box;
+    padding: 0.48rem 0.24rem 0.23rem;
+}
+nav ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    width: 1.89rem;
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    background: #4790f1;
+    position: relative;
+    font-family: "苹方";
+    font-size: 0.26rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #fefefe;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+nav ul .holder{
+    background: #fff;
+    color: #4b98ff;
+}
+nav ul li .pointL, nav ul li .pointR{
+    width: 0.06rem;
+    height: 0.06rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+nav ul li .pointL{
+    left: 0.13rem;
+}
+nav ul li .pointR{
+    right: 0.13rem;
+}
+section .gap{
+    width: 100%;
+    height: 4.11rem;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+section .gap img{
+    width: 6.55rem;
+    height: 3.69rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+section .button{
+    width: 100%;
+    height: 0.65rem;
+    border-radius: 0.08rem;
+    border: none;
+    background: #ff9f48;
+    color: #fff;
+    font-size: 0.34rem;
+    line-height: 0.65rem;
+}
+.bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(254,254,254,0.9);
+    box-sizing: border-box;
+    padding: 0 0.72rem;
+    overflow: hidden;
+    z-index: 20;
+}
+.bg ul{
+    width: 6.06rem;
+    height: 3.02rem;
+    position: absolute;
+    bottom: 0.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+.bg ul li{
+    width: 25%;
+    height: 1.26rem;
+}
+.bg ul li img{
+    width: 1.05rem;
+    height: 1.26rem;
+}

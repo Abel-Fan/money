@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/buy.css' %}">
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <title>产品</title>
+</head>
+<body>
+    <header>
+        <div class="zhuangtai"></div>
+        <a href="{% url 'financing:xiangqing' pid %}"><img src="{% static 'img/nhreturn.png' %}" alt=""></a>
+        <div><span>购买</span></div>
+    </header>
+    <section>
+        <main>
+            <div class="buy">购买金额（元）</div>
+            <div class="money">{{ money }}.<span>00</span></div>
+            <div class="pay">
+                <div class="main">
+                    <div class="mode">
+                        <div class="spot"></div>
+                        <span>请选择您的付款方式</span>
+                    </div>
+                    <div class="paymode">
+                        <ul>
+                            <li>
+                                <img src="{% static 'img/alipay.png' %}" alt="">
+                                <span>支付宝支付</span>
+                            </li>
+                            <li>
+                                <img src="{% static 'img/wechat1.png' %}" alt="">
+                                <span>微信支付</span>
+                            </li>
+                            <li>
+                                <img src="{% static 'img/remain.png' %}" alt="">
+                                <span>余额支付</span>
+                            </li>
+                            <li>
+                                <img src="{% static 'img/card.png' %}" alt="">
+                                <span>银行卡支付</span>
+                                <div class="num"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card" style="display: none">
+                        {% for item in wf %}
+                            {% if item.bank == "交通银行" %}
+                                {% for i in arr2 %}
+                                <section class="section1">
+                                    <div class="box1">
+                                        <img src="{% static 'img/tds8.png'%}" alt="" width="100%" height="100%">
+                                    </div>
+                                    <div class="box2">
+                                        <p class="p1">{{ item.bank }}</p>
+                                        {% if item.card_lx == 0 %}
+                                        <p class="p2">储蓄卡</p>
+                                        {% elif item.card_lx == 1 %}
+                                        <p class="p2">信用卡</p>
+                                        {% endif %}
+                                        <span>****  ****  ****  {{ i }}</span>
+                                    </div>
+                                </section>
+                                {% endfor %}
+                            {% elif item.bank == "建设银行" %}
+                                {% for i in arr1 %}
+                            <section class="section2">
+                                <div class="box1">
+                                    <img src="{% static 'img/tds9.png'%}" alt="" width="100%" height="100%">
+                                </div>
+                                <div class="box2">
+                                    <p class="p1">{{ item.bank }}</p>
+                                    {% if item.card_lx == 0 %}
+                                    <p class="p2">储蓄卡</p>
+                                    {% elif item.card_lx == 1 %}
+                                    <p class="p2">信用卡</p>
+                                    {% endif %}
+                                    <span>****  ****  ****  {{ i }}</span>
+                                </div>
+                            </section>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <div class="zhezhao" style="display: none"></div>
+    <div class="yes" style="display: none">
+        <div class="close">×</div>
+        <div class="cardlogo"><img src="{% static 'img/card.png' %}" alt=""></div>
+        <div class="txt">您本次购买的基金总额(元)</div>
+        <div class="money">{{ money }}.<span>00</span></div>
+        <div class="line"></div>
+        <button>确认支付</button>
+    </div>
+    <div class="fingerprint" style="display: none">
+        <div class="txt">您本次购买的基金总额(元)</div>
+        <div class="money">{{ money }}.<span>00</span></div>
+        <div class="zhiwen"><img src="{% static 'img/zhiwen.png' %}" alt=""></div>
+        <div class="txt1">Touch ID</div>
+        <div class="txt2">使用指纹识别完成付款</div>
+        <div class="spot" style="margin-top: 0.16rem;background: rgba(75,152,255,0.2);"></div>
+        <div class="spot" style="background: rgba(75,152,255,0.5);"></div>
+        <div class="spot"></div>
+    </div>
+    <div class="num_password" style="display: none">
+        <div class="password">
+            <div class="txt">您本次购买的基金总额(元)</div>
+            <div class="money">{{ money }}.<span>00</span></div>
+            <div class="pass">
+                <div class="tip">请使用您的支付密码完成付款</div>
+                <div class="mimaspot">
+                    <ul></ul>
+                </div>
+                <div class="mima">
+                    <ul>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                        <li>
+                            <div class="line"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="jian">切换安全键盘</button>
+            <button class="jian2" style="display: none">切换常规键盘</button>
+        </div>
+        <div class="jianpan" id="jianpan1">
+            <ul>
+                <li><div>1</div></li>
+                <li><div>2</div></li>
+                <li><div>3</div></li>
+                <li><div>4</div></li>
+                <li><div>5</div></li>
+                <li><div>6</div></li>
+                <li><div>7</div></li>
+                <li><div>8</div></li>
+                <li><div>9</div></li>
+                <li></li>
+                <li><div>0</div></li>
+                <li><img class="del" src="{% static 'img/del.png' %}" alt=""></li>
+            </ul>
+        </div>
+        <div class="jianpan" style="display: none" id="jianpan2">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(".num").text($(".card section").length)
+    if($(".card section").length==0){
+        $(".num").parent().remove()
+    }
+    $(".zhezhao").click(function () {
+        $(".zhezhao").css("display","none");
+        $(".yes").css("display","none");
+        $(".num_password").css("display","none");
+        $(".fingerprint").css("display","none");
+        if($(".card").attr("style")=="display: block;"){
+            $(".paymode").css("display","none");
+        }else {
+            $(".paymode").css("display","block");
+        }
+    })
+    $(".paymode ul li:nth-child(3)").click(function () {
+        $(".paymode").css("display","none");
+        $(".zhezhao").css("display","block");
+        $(".num_password").css("display","block");
+    })
+    $(".paymode ul li:nth-child(4)").click(function () {
+        $(".paymode").css("display","none");
+        $(".card").css("display","block");
+        $(".mode span").text("请选择一张银行卡进行付款")
+    })
+    $(".card li").click(function () {
+        $(".yes").css("display","block");
+        $(".zhezhao").css("display","block");
+    })
+    $(".close").click(function () {
+        $(".yes").css("display","none");
+        $(".zhezhao").css("display","none");
+    })
+    $(".yes button").click(function () {
+        $(".yes").css("display","none");
+        $(".num_password").css("display","block");
+    })
+    $(".jian2").click(function () {
+        $(".jian2").css("display","none");
+        $(".jian").css("display","block");
+        $("#jianpan1").css("display","block");
+        $("#jianpan2").css("display","none");
+
+    })
+    $(".jian").click(function () {
+        $(".jian").css("display","none");
+        $(".jian2").css("display","block");
+        $("#jianpan1").css("display","none");
+        $("#jianpan2").css("display","block");
+        function randomFn() {
+            return Math.floor(Math.random()*10);
+        }
+        let s=[];
+        while (s.length<10){
+            let num=randomFn();
+            let flag=true;
+            for(let i=0;i<s.length;i++){
+                if(num==s[i]){
+                    flag=false;
+                    break;
+                }else {
+                    flag=true;
+                }
+            }
+            if(flag){
+                s.push(num)
+            }
+        }
+        $("#jianpan2 ul").append($(`<li><div>${s[0]}</div></li>
+                <li><div>${s[1]}</div></li>
+                <li><div>${s[2]}</div></li>
+                <li><div>${s[3]}</div></li>
+                <li><div>${s[4]}</div></li>
+                <li><div>${s[5]}</div></li>
+                <li><div>${s[6]}</div></li>
+                <li><div>${s[7]}</div></li>
+                <li><div>${s[8]}</div></li>
+                <li></li>
+                <li><div>${s[9]}</div></li>
+                <li><img class="del" src="{% static 'img/del.png' %}" alt=""></li>`))
+    })
+    $(".jianpan").on("touchstart",function (e) {
+        let target=e.target;
+
+        if($(target).text()!=""){
+            if ($(target).prop("tagName")=='LI'){
+                $(".jianpan li").css("background","#fff");
+                $(target).css("background","rgba(0,0,0,0.1)");
+            }else{
+                $(target).parent().css("background","rgba(0,0,0,0.1)");
+            }
+            $(".jianpan").on("touchend",function () {
+                $(".jianpan li").css("background","#fff")
+            })
+            $(".mimaspot ul").append($(`<li></li>`));
+            if($(".mimaspot ul li").length==6){
+                location.assign("/paysuccess")
+            }
+        }else if($(target).html()=='<img class="del" src="img/del.png" alt="">'||$(target).prop("tagName")=='IMG'){
+            $(".mimaspot ul li:last-child").remove();
+            $(".jianpan li").css("background","#fff");
+            if($(target).prop("tagName")=='IMG'){
+                $(target).parent().css("background","rgba(0,0,0,0.1)");
+            }else{
+                $(target).css("background","rgba(0,0,0,0.1)");
+            }
+            $(".jianpan").on("touchend",function () {
+                $(".jianpan li").css("background","#fff")
+            })
+        }
+
+    })
+
+
+</script>
+</html>

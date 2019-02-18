@@ -1,0 +1,294 @@
+@import url(base.css);
+header{
+    width: 100%;
+    height: 1.3rem;
+    background: #4b98ff;
+}
+header .zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header img{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+}
+header div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 0.5rem;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+nav{
+    width: 100%;
+    height: 1.08rem;
+    background: #4b98ff;
+    margin-top: -0.02rem;
+}
+nav .nav{
+    width: 4.61rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+nav .nav .market{
+    width: 2.16rem;
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    background: #4790f1;
+    position: relative;
+    font-family: "苹方";
+    font-size: 0.26rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #fefefe;
+}
+nav .nav .holder{
+    background: #fff;
+    color: #4b98ff;
+}
+nav .nav .market .pointL, nav .nav .market .pointR, nav .nav .holder .pointL, nav .nav .holder .pointR{
+    width: 0.06rem;
+    height: 0.06rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+nav .nav .market .pointL, nav .nav .holder .pointL{
+    left: 0.24rem;
+}
+nav .nav .market .pointR, nav .nav  .holder .pointR{
+    right: 0.24rem;
+}
+section{
+    width: 100%;
+    background: #f9f9f9;
+    position: relative;
+}
+section  .date{
+    width: 100%;
+    height: 0.86rem;
+    font-size: 0.2rem;
+    text-align: center;
+    font-family: San Francisco Display;
+    font-weight: bold;
+    color: rgba(0,0,0,0.3);
+    line-height: 0.86rem;
+    margin-top: 0.1rem;
+    position: relative;
+}
+section .date .red{
+    width: 0.05rem;
+    height: 0.05rem;
+    border-radius: 50%;
+    background: #ff677e;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    left: 2.36rem;
+}
+section .date span{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    left: 2.54rem;
+}
+section .content{
+    width: 100%;
+    height: 1.32rem;
+    background: #fefefe;
+    box-sizing: border-box;
+    padding: 0.26rem 0.18rem;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+.section{
+    width: 100%;
+    height: auto;
+    padding: 0 0.24rem 1.4rem;
+    box-sizing: border-box;
+    background: #f9f9f9;
+    position: absolute;
+    top: 0;
+    overflow-y: auto;
+
+}
+.section .content1{
+    width: 100%;
+    height: auto;
+    background: #fefefe;
+    margin-top: 0.12rem;
+    padding: 0.4rem 0.12rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+.section .content1 .top{
+    width: auto;
+    height: 0.63rem;
+    color:rgba(0,0,0,0.7);
+    font-size: 0.3rem;
+    font-weight: bold;
+    font-family: "苹方 粗体";
+}
+.section .content1 .top .logo{
+    width: 0.63rem;
+    height: 0.63rem;
+    float: left;
+}
+.section .content1 .top .logo img{
+    width: 0.63rem;
+    height: 0.63rem;
+}
+.section .content1 .top .text{
+    float: left;
+    line-height: 0.63rem;
+    margin-left: 0.18rem;
+}
+.section .content1 .bottom{
+    width: 100%;
+    height: auto;
+    margin-top: 0.24rem;
+    overflow: hidden;
+}
+.section .content1 .bottom .spot{
+    width: 0.06rem;
+    height: 0.06rem;
+    border-radius: 50%;
+    background: #FCA534;
+    float: left;
+    margin-left: 0.14rem;
+    margin-top: 0.16rem;
+}
+.section .content1 .bottom .txt{
+    width: 6.34rem;
+    height: auto;
+    float: left;
+    margin-left: 0.1rem;
+    color:rgba(0,0,0,0.4);
+    font-size: 0.22rem;
+    font-weight: bold;
+    font-family: "苹方";
+
+}
+section .content .contentL{
+    width: 0.76rem;
+    height: 0.8rem;
+    float: left;
+    position: relative;
+}
+section .content .contentL img{
+    width: 0.63rem;
+    height: 0.63rem;
+    position: absolute;
+    top: 0.12rem;
+}
+section .content .contentR{
+    width: 5.78rem;
+    height: 0.8rem;
+    float: left;
+}
+section .content .contentR .contentT{
+    width: 100%;
+    height: 0.48rem;
+    font-size: 0.3rem;
+    line-height: 0.48rem;
+    font-weight: bold;
+}
+section .content .contentR .contentB{
+    width: 100%;
+    height: 0.48rem;
+    font-size: 0.2rem;
+    line-height: 0.48rem;
+    position: relative;
+}
+section .content .contentR .contentB .red1{
+    width: 0.05rem;
+    height: 0.05rem;
+    border-radius: 50%;
+    background: #ff677e;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+section .content .contentR .contentB span{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+    left: 0.2rem;
+    color:rgba(0,0,0,0.4);
+    font-size: 0.22rem;
+    font-weight: bold;
+    font-family: "苹方";
+}
+footer{
+    width: 100%;
+    height: 1.1rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background: #fff;
+}
+footer ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+footer ul li{
+    width: 0.64rem;
+    height: 100%;
+    position: relative;
+    color: #bad9ff;
+}
+footer ul li:nth-child(4){
+    color: #6b9de0;
+}
+footer ul li img{
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.08rem;
+}
+footer ul li span{
+    width: 0.64rem;
+    position: absolute;
+    top: 0.68rem;
+    font-size: 0.22rem;
+    text-align: center;
+}
+footer ul li .num{
+    width: 0.34rem;
+    height: 0.24rem;
+    background: #FFF1D8;
+    border-radius: 0.12rem;
+    position: absolute;
+    top: 0.08rem;
+    right: -0.2rem;
+    font-size: 0.24rem;
+    font-family: San Francisco Display;
+    font-weight: bold;
+    color: #FFD1A8;
+    text-align: center;
+    line-height: 0.24rem;
+}

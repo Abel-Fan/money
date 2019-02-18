@@ -1,0 +1,669 @@
+@import url(base.css);
+*{
+	padding:0;
+	margin:0;
+	list-style: none;
+	font-size: 0.16rem;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #fafafa;
+}
+button:focus{
+    border: none;
+    outline: none;
+}
+/*首页关于我们开始*/
+
+.header{
+	width: 100%;
+	height: auto;
+}
+.banner{
+	width: 100%;
+	height: 3.73rem;
+	overflow:hidden;
+	background: #fafafa;
+    position:relative;
+}
+.p1{
+	transform:translate3d(-69px,0,0) scale(0.81);
+}
+.p2{
+	transform:translate3d(100px,0,0) scale(0.81);
+	transform-origin:0 50%;
+	opacity: 0.8;
+	z-index: 2;
+}
+.p3{
+	transform:translate3d(0px,0,0) scale(1);
+	z-index: 3;
+	opacity: 1;
+}
+.banner .imgBox{
+	width: 100%;
+	height: auto;
+	display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position:relative;
+}
+.banner .imgBox li a{
+	width: 6.52rem;
+	height: 2.91rem;
+	margin:auto;
+	position:absolute;
+	top: 0.42rem;
+	left: 0;
+	right: 0;
+	border:0;
+	border-radius: 10px;
+	opacity: 1;
+	transition: all 0.3s ease-out;
+}
+.banner .imgBox li a img{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 90%;
+    height: 90%;
+}
+.banner .circleBtn{
+    width: 0.9rem;
+    height:0.1rem;
+    margin:auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.18rem;
+    z-index: 10;
+}
+.banner .circleBtn .circle{
+    width: 0.06rem;
+    height: 0.06rem;
+    background: #60ace5;
+    border-radius: 50%;
+    border: 2px solid #60ace5;
+    float: left;
+    margin-right: 0.1rem;
+    z-index: 10;
+}
+.banner .circleBtn .circle:hover{
+    background: #0b81d8;
+    border:2px solid #0b81d8;
+
+}
+.banner .circleBtn .btn{
+    background: #0b81d8;
+    border:2px solid #0b81d8;
+}
+.banner .circleBtn .circle:nth-child(5){
+    margin-right: 0;
+}
+/*光大永鑫混合基地*/
+.nav{
+	width: 94%;
+	height: auto;
+	background: #fff;
+	margin-left: 3%;
+	padding-top: 0.39rem;
+}
+.nav .qbtitle{
+	width: 100%;
+	height: 0.46rem;
+	padding-left: 3%;
+	display: flex;
+}
+.nav .qbtitle .titles{
+	height: 0.46rem;
+	font-size: 0.27rem;
+	text-align: center;
+	line-height: 0.46rem;
+	float: left;
+    font-family: "苹方";
+    font-weight: bold;
+}
+.nav .qbtitle .gfx{
+	width: 1.14rem;
+	height: 0.46rem;
+	background: #fdeaed;
+	border-radius:20px;
+	font-size: 0.22rem;
+	text-align: center;
+	line-height: 0.46rem;
+	color:#ff466d;
+	margin-left: 8%;
+}
+
+.nav .qbtitlez{
+	width: 100%;
+	height: 0.46rem;
+	/*padding-left: 3%;*/
+	background: #f7f7f7;
+	margin-top: 0.47rem;
+	display: flex;
+	margin-bottom:0.8rem;
+}
+.nav .qbtitlez .left{
+	width: 33%;
+	height: 0.58rem;
+	background: #fff;
+	padding-left: 0%;
+	text-align: center;
+}
+.nav .qbtitlez .cen{
+	width: 33%;
+	height: 0.58rem;
+	background: #fff;
+	margin-left: 0.5%;
+	text-align: center;
+
+}
+.nav .qbtitlez .right{
+	width: 33%;
+	height: 0.58rem;
+	background: #fff;
+	margin-left: 0.5%;
+	text-align: center;
+}
+.nav .qbtitlez .price{
+    font-size: 0.34rem;
+    font-weight: bold;
+}
+
+.nav .qbtitled{
+	width: 100%;
+	height: 0.5rem;
+	margin-top: 0.44rem;
+	display: flex;
+	padding-bottom: 0.33rem;
+}
+.nav .qbtitled .left{
+    margin-top:0.1rem;
+	color:#d6d6d6;
+	padding-left: 4%;
+}
+.nav .qbtitled  .right{
+	margin-left: 23%;
+    height: 0.5rem;
+	width: 35%;
+	background: #fc9b44;
+	font-size: 0.22rem;
+	color:#fff;
+	line-height: 0.5;
+	text-align: center;
+	border:1px solid #fc9b44;
+	border-radius: 5px;
+}
+/*通告*/
+.tongzhi{
+	width: 100%;
+	height: 0.69rem;
+	display: flex;
+}
+.tongzhi .i7{
+    display: block;
+    width: 0.45rem;
+    height: 0.4rem;
+    margin:0.21rem 0 0.17rem 0.22rem;
+
+}
+.tongzhi span{
+	font-size: 0.2rem;
+	color: #c8c8c8;
+	margin:0.2rem 0;
+	margin-left: 0.11rem;
+}
+/*千万人都在使用*/
+.navs{
+	width: 94%;
+	height: auto;
+	background: #fff;
+	margin-left: 3%;
+	padding-bottom:0.42rem;
+	padding-top: 0.39rem;
+}
+.navs .qbtitle{
+	width: 100%;
+	height: 0.46rem;
+	padding-left: 3%;
+	display: flex;
+	position: relative;
+}
+.navs .qbtitle .titles{
+	height: 0.46rem;
+	font-size: 0.27rem;
+	text-align: center;
+	line-height: 0.46rem;
+	float: left;
+	font-family: "苹方";
+    font-weight: bold;
+}
+.navs .qbtitle .gfx{
+	width: 1.14rem;
+	height: 0.46rem;
+	background: #ebfaf3;
+	border-radius:20px;
+	font-size: 0.22rem;
+	text-align: center;
+	line-height: 0.46rem;
+	color:#7be1ac;
+	margin-left: 10%;
+}
+/*按钮*/
+.navs .qbtitle .circleBtn{
+    width: 0.9rem;
+    height:0.1rem;
+	position: absolute;
+	right: 0.3rem;
+	top: 0.1rem;
+
+    z-index: 10;
+}
+.navs .qbtitle .circleBtn .circle{
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #b2b2b2;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.1rem;
+    z-index: 10;
+}
+
+.navs .qbtitlener .circleBtn .btn{
+    background: #7f7f7f;
+    border:2px solid #7f7f7f;
+}
+.navs .qbtitle .circleBtn .circle:nth-child(5){
+    margin-right: 0;
+}
+
+.navs .qbtitlez{
+	width: 100%;
+	height: 0.9rem;
+	/*padding-left: 3%;*/
+	background: #f7f7f7;
+	margin-top: 0.2rem;
+	display: flex;
+}
+.navs .qbtitlez .left{
+	width: 33%;
+	height:0.9rem;
+	background: #fff;
+	padding-left: 0%;
+	text-align: center;
+}
+.navs .qbtitlez .cen{
+	width: 33%;
+	height: 0.9rem;
+	background: #fff;
+	margin-left: 0.5%;
+	text-align: center;
+
+}
+.navs .qbtitlez .right{
+	width: 33%;
+	height: 0.9rem;
+	background: #fff;
+	margin-left: 0.5%;
+	text-align: center;
+}
+.navs .qbtitlez .price{
+	font-size: 0.34rem;
+    font-weight: bold;
+}
+/*靠谱的理财平台*/
+.navss{
+	width: 94%;
+	height: auto;
+	background: #fff;
+	margin-left: 3%;
+	margin-top: 0.36rem;
+	padding-top: 0.39rem;
+}
+.navss .qbtitle{
+	width: 100%;
+	height: 0.46rem;
+	padding-left: 3%;
+	display: flex;
+	position: relative;
+}
+.navss .qbtitle .titles{
+	height: 0.46rem;
+	font-size: 0.27rem;
+	text-align: center;
+	line-height: 0.46rem;
+	float: left;
+	font-family: "苹方";
+    font-weight: bold;
+}
+.navss .qbtitle .gfx{
+	width: 1.14rem;
+	height: 0.46rem;
+	background: #ecf5ff;
+	border-radius:20px;
+	font-size: 0.22rem;
+	text-align: center;
+	line-height: 0.46rem;
+	color:#7cbeff;
+	margin-left: 10%;
+}
+/*按钮*/
+.navss .qbtitle .circleBtn{
+    width: 0.9rem;
+    height:0.1rem;
+	position: absolute;
+	right: 0.3rem;
+	top: 0.1rem;
+
+    z-index: 10;
+}
+.navss  .qbtitle .circleBtn .circle{
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #b2b2b2;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.1rem;
+    z-index: 10;
+}
+
+.navss .qbtitlener .circleBtn .btn{
+    background: #7f7f7f;
+    border:2px solid #7f7f7f;
+}
+.navss .qbtitle .circleBtn .circle:nth-child(5){
+    margin-right: 0;
+}
+
+.navss .qbtitlez{
+	width: 100%;
+	height: 2.03rem;
+	background: #fff;
+	margin-top: 0.47rem;
+}
+.navss .qbtitlez .shang{
+	display: flex;
+	width: 100%;
+	height: 0.57rem;
+	background: #fff;
+}
+.navss .qbtitlez .shang .left{
+	width: 50%;
+	height: 0.57rem;
+	padding-left: 4%;
+
+}
+.navss .qbtitlez .shang .left .i1{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navss .qbtitlez .shang .left .con{
+	margin-left: 4%;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+.navss .qbtitlez .shang .right{
+	width: 50%;
+	height: 0.57rem;
+	padding-left: 4%;
+
+}
+.navss .qbtitlez .shang .right .i2{
+	font-size: 0.48rem;
+	color: #7cb4ff;
+}
+.navss .qbtitlez .shang .right .con{
+	margin-left: 4%;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+
+.navss .qbtitlez .xia{
+	display: flex;
+	width: 100%;
+	height: 0.57rem;
+	background: #fff;
+	margin-top: 0.43rem;
+}
+.navss .qbtitlez .xia .left{
+	width: 50%;
+	height: 0.57rem;
+	padding-left: 4%;
+}
+.navss .qbtitlez .xia .left .i3{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navss .qbtitlez .xia .left .con{
+	margin-left: 4%;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+.navss .qbtitlez .xia .right{
+	width: 50%;
+	height: 0.57rem;
+	padding-left: 4%;
+}
+.navss .qbtitlez .xia .right .i4{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navss .qbtitlez .xia .right .con{
+	margin-left: 4%;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+/*平台真实透明透明*/
+.navsss{
+	width: 94%;
+	height: auto;
+	background: #fff;
+	margin-left: 3%;
+	margin-top: 0.36rem;
+	padding-top: 0.39rem;
+}
+.navsss .qbtitle{
+	width: 100%;
+	height: 0.46rem;
+	padding-left: 3%;
+	display: flex;
+	position: relative;
+}
+.navsss .qbtitle .titles{
+	height: 0.46rem;
+	font-size: 0.27rem;
+	text-align: center;
+	line-height: 0.46rem;
+	float: left;
+	font-family: "苹方";
+    font-weight: bold;
+}
+.navsss .qbtitle .gfx{
+	width: 1.14rem;
+	height: 0.46rem;
+	background: #fffde1;
+	border-radius:20px;
+	font-size: 0.22rem;
+	text-align: center;
+	line-height: 0.46rem;
+	color:#89d834;
+	margin-left: 10%;
+}
+/*按钮*/
+.navsss .qbtitle .circleBtn{
+    width: 0.9rem;
+    height:0.1rem;
+	position: absolute;
+	right: 0.3rem;
+	top: 0.1rem;
+
+    z-index: 10;
+}
+.navsss  .qbtitle .circleBtn .circle{
+    width: 0.14rem;
+    height: 0.14rem;
+    background: #b2b2b2;
+    border-radius: 50%;
+    float: left;
+    margin-right: 0.1rem;
+    z-index: 10;
+}
+
+.navsss .qbtitlener .circleBtn .btn{
+    background: #7f7f7f;
+    border:2px solid #7f7f7f;
+}
+.navsss .qbtitle .circleBtn .circle:nth-child(5){
+    margin-right: 0;
+}
+
+.navsss .qbtitlez{
+	width: 100%;
+	height: 1.65rem;
+	background: #fff;
+	margin-top: 0.47rem;
+}
+.navsss .qbtitlez .shang{
+	display: flex;
+	width: 100%;
+	height: 0.57rem;
+	background: #fff;
+	text-align: center;
+}
+.navsss .qbtitlez .shang .left{
+	width: 32%;
+	height: 0.57rem;
+	padding-left: 2%;
+}
+.navsss .qbtitlez .shang .left .i1{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navsss .qbtitlez .shang .left .con{
+	margin-top: 0.16rem;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+.navsss .qbtitlez .shang .cen{
+	width: 33%;
+	height: 0.57rem;
+}
+.navsss .qbtitlez .shang .cen .i2{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navsss .qbtitlez .shang .cen .con{
+	margin-top: 0.16rem;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+.navsss .qbtitlez .shang .right{
+	width: 33%;
+	height: 0.57rem;
+}
+.navsss .qbtitlez .shang .right .i3{
+	font-size: 0.57rem;
+	color: #7cb4ff;
+}
+.navsss .qbtitlez .shang .right .con{
+	margin-top: 0.16rem;
+	font-size: 0.24rem;
+	color: #b8b8b8;
+}
+/*尾部*/
+.section1{
+	width: 100%;
+	height: 1.12rem;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0rem;
+	left: 0rem;
+	display: flex;
+
+	justify-content: space-around;
+	align-items: center;
+	z-index: 20;
+}
+.section1 .box1{
+	width: 20%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.section1 .box1 .i1{
+	font-size: 0.43rem;
+	color: #C7E0FF;
+	overflow: hidden;
+}
+.section1 .box1 .i1:hover{
+	color:#C7E0FF;
+}
+.section1 .box1 .p3{
+	font-size: 0.12rem;
+	margin-top: 0.03rem;
+	color: #C7E0FF;
+}
+footer{
+    width: 100%;
+    height: 1.1rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background: #fff;
+}
+footer ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+footer ul li{
+    width: 0.64rem;
+    height: 100%;
+    position: relative;
+    color: #bad9ff;
+}
+footer ul li:nth-child(1){
+    color: #6b9de0;
+}
+footer ul li img{
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.08rem;
+}
+footer ul li span{
+    width: 0.64rem;
+    position: absolute;
+    top: 0.68rem;
+    font-size: 0.22rem;
+    text-align: center;
+}
+.qbtitlez .left img,.qbtitlez .cen img,.qbtitlez .right img{
+    width:0.82rem;
+    height:0.82rem;
+
+}
+.navss .left img,.navss .cen img,.navss .right img{
+    width:0.51rem;
+    height:0.57rem;
+}
+.navss .left .con,.navss .right .con{
+    position:absolute;
+    top:0.2rem;
+    left:1rem;
+}
+.navss .xia .left .con{
+    left:0.93rem;
+}
+
+

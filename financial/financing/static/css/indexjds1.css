@@ -1,0 +1,213 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "苹方";
+}
+a{
+	text-decoration: none;
+}
+body{
+	background-color: #ffffff;
+	padding-bottom: 2.6rem;
+}
+img{
+	border: none;
+	display: block;
+}
+html,body{
+	background-color: #FAFAFA;
+}
+button{
+    outline:none;
+    border:none;
+}
+header{
+    width: 100%;
+    height: 1.3rem;
+    background: #4b98ff;
+    position: relative;
+}
+header .zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header a{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+    position: relative;
+}
+header  a img{
+    width: 0.3rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 30;
+}
+header .imgR{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-right: 0.24rem;
+    margin-top: 0.33rem;
+    float: right;
+    position: relative;
+}
+header .imgR img{
+    width: 0.3rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+header .title{
+    width: 100%;
+    height: 0.9rem;
+    text-align: center;
+    line-height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+.section1{
+	
+	width: 100%;
+	height: 0.98rem;
+	margin-top: 0.24rem;
+	background-color: #fff;
+	
+	
+
+}
+.section1 .a1{
+	display: block;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+
+}
+.section1 .a1 .p1{
+	font-size: 0.28rem;
+	color: #B7B7B7;
+	margin-left: 0.4rem;
+}
+.section1 .a1 .i1{
+	display: block;
+	width: 0.52rem;
+	height: 0.52rem;
+	margin-left: 0.4rem;
+}
+.section1 .a1 .i2{
+	display: block;
+	width: 0.22rem;
+	height: 0.34rem;
+	margin-left: 4.2rem;
+}
+.section1 .a1 .p2{
+	font-size: 0.24rem;
+	color: #B7B7B7;
+}
+.section1 .a1 .p2 .s1{
+	font-size: 0.24rem;
+	color: #B7B7B7;
+	margin-left: 3.8rem;
+}
+.b1{
+	display: block;
+	width: 50%;
+	height: 0.7rem;
+	background-color: #4B98FF;
+	
+	margin: 0.48rem auto;
+	border-radius: 0.2rem;
+	overflow: hidden;
+}
+.b1 .a2{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0.28rem;
+	color: #fff;
+	line-height: 0.7rem;
+	text-align: center;
+}
+.section2{
+	width: 100%;
+	height: 0.98rem;
+	margin-top: 0.24rem;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+}
+.section2 .i1{
+	display: block;
+	width: 0.52rem;
+	height: 0.52rem;
+	margin-left: 0.4rem;
+}
+.section2 .i2{
+	display: block;
+	width: 0.22rem;
+	height: 0.34rem;
+	margin-left: 4.2rem;
+}
+.section2 .p1{
+	font-size: 0.28rem;
+	color: #B7B7B7;
+	margin-left: 0.4rem;
+}
+.section2 .box1{
+	width: 0.8rem;
+	height: 0.5rem;
+	background-color: #4B98FF;
+	margin-left: 3.6rem;
+	border-radius: 0.36rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.section2 .box1 .b11{
+	position: absolute;
+	left: 0.46rem;
+	width: 0.3rem;
+	height: 0.3rem;
+	border-radius: 50%;
+	background-color: #fff;
+	z-index: 5;
+	transition: 0.2s;
+}
+.section2 .box2{
+	width: 0.8rem;
+	height: 0.5rem;
+	background-color: #f8f8f8;
+	margin-left: 3.6rem;
+	border-radius: 0.36rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.section2 .box2 .b21{
+	position: absolute;
+	left: 0.04rem;
+	width: 0.3rem;
+	height: 0.3rem;
+	border-radius: 50%;
+	background-color: #fff;
+	z-index: 5;
+	transition: 0.2s;
+}

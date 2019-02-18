@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>消息</title>
+    {% load static %}
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/message.css' %}">
+</head>
+<style>
+    .section .no{
+        height:8.74rem;
+        width:100%;
+        font-family: "苹方";
+        font-size: 0.3rem;
+        line-height: 0.6rem;
+        text-align: center;
+        color: rgba(0,0,0,0.7);
+        margin-top:0.2rem;
+    }
+</style>
+<body>
+<header>
+    <div class="zhuangtai"></div>
+    <div><span>消息</span></div>
+</header>
+<nav>
+    <div class="nav">
+        <div class="market holder">
+            个人消息
+            <div class="pointL" style="background: #b5cdff"></div>
+            <div class="pointR" style="background: #b5cdff"></div>
+        </div>
+        <div class="market">
+            平台公告
+            <div class="pointL"></div>
+            <div class="pointR"></div>
+        </div>
+    </div>
+</nav>
+<section>
+        {% if message == "no" %}
+        <div class="section" style="z-index: 10;"><div class="no">没有您的消息</div></div>
+        {% else %}
+        <div class="section" style="z-index: 10;">
+            {% for item in message %}
+            <div class="mes">
+                <div class="date">
+                    <div class="box">
+                        <div class="red"></div>
+                        <span>{{ item.c_time }}</span>
+                    </div>
+                </div>
+                <div class="content1">
+                    <div class="top">
+                        <div class="logo">
+                            {% if item.type == 0 %}
+                            <img src="{% static 'img/money.png' %}" alt="">
+                            {% elif item.type == 1 %}
+                            <img src="{% static 'img/productmessage.png' %}" alt="">
+                            {% else %}
+                            <img src="{% static 'img/other.png' %}" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="text">{{ item.title }}</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="spot"></div>
+                        <p class="txt">{{ item.con }}</p>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+    {% endif %}
+    {% if notice == "no" %}
+    <div class="section"><div class="no">没有平台公告</div></div>
+    {% else %}
+    <div class="section" style="height: 9.6rem;background: #f9f9f9">
+        {% for items in notice %}
+        <div class="mes">
+            <div class="date">
+                <div class="box">
+                    <div class="red"></div>
+                    <span>{{ items.c_time }}</span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="contentL">
+                    <img src="{% static 'img/mes.png' %}" alt="">
+                </div>
+                <div class="contentR">
+                    <div class="contentT">{{ items.title }}</div>
+                    <div class="contentB">
+                        <div class="red1" style="background: #fca534"></div>
+                        <span>{{ items.con }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+<footer>
+    <ul>
+        <li>
+            <img src="{% static 'img/home.png' %}" alt="">
+            <span>首页</span>
+        </li>
+        <li>
+            <img src="{% static 'img/product1.png' %}" alt="">
+            <span>产品</span>
+        <li>
+            <img src="{% static 'img/class.png' %}" alt="">
+            <span>课堂</span>
+        </li>
+        <li>
+            <img src="{% static 'img/message1.png' %}" alt="">
+            <span>消息</span>
+            {% if not num == "" %}
+            <div class="num">{{ num }}</div>
+            {% endif %}
+        <li>
+            <img src="{% static 'img/user.png' %}" alt="">
+            <span>我的</span>
+        </li>
+    </ul>
+</footer>
+</body>
+<script src="{% static 'js/market.js' %}"></script>
+
+</html>

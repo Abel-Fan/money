@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/indexjds5.css' %}">
+	<script src="{% static 'js/rem.js' %}"></script>
+	<script src="{% static 'js/indexjds5.js' %}"></script>
+	<script src="{% static 'js/animate.js' %}"></script>
+	<script src="{% static 'js/jQuery.js' %}"></script>
+</head>
+<body>
+	<header>
+		<div class="zhuangtai"></div>
+	</header>
+	<section class="section6">
+		<div class="box2">
+			<img src="{% static 'img/tds12.png'%}" alt="" width="100%" height="100%" class="i4">
+			<div class="b21">
+				<h2>{{ we.user }}</h2>
+				<h3>{{ mystr6 }}******{{ mystr7 }}</h3>
+			</div>
+			<a href="{% url 'financing:add' %}">
+				<img src="{% static 'img/tds20.png' %}" alt="" width="100%" height="100%">
+			</a>
+		</div>
+		<div class="box3">
+			<div class="b31">
+				<p>总资产(元)</p>
+				<img src="{% static 'img/tds21.png'%}" alt="" style="width:0.6rem;height:0.4rem">
+			</div>
+			<span class="s3">{{ we.z_money }}</span>
+		</div>
+		<div class="box4">
+			<div class="b41">
+				<p>待收收益(元)</p>
+				<span class="s4">{{ we.d_money }}</span>
+			</div>
+			<div class="b42">
+				<p>累计收益(元)</p>
+				<span class="s5">{{ we.lj_money }}</span>
+			</div>
+		</div>
+	</section>
+	<section class="section5">
+		<p>可用余额(元)</p>
+		<span class="s2">{{ we.ky_money }}</span>
+		<button class="b1">充值</button>
+		<button class="b2">提现</button>
+	</section>
+	<section class="section4">
+		<img src="{% static 'img/tds13.png'%}" alt="" width="100%" height="100%" style="margin-left:0.2rem;margin-right:0.44rem;">
+		<p>我的资产</p>
+		<div><span class="s1">3</span>笔</div>
+	</section>
+	<section class="section3">
+		<div class="box5">
+			{% for name,money,y,h in products %}
+			<div class="b11">
+				<div class="b111" style="background-color: #fff;">
+					<p>{{ name }}</p>
+					<div class="b1111">
+						<span class="s6" style="color: #47A7FE;">·</span>
+						<p>持有金额</p>
+						<span class="s7">{{ money }}.00</span>
+						<div class="b11111"></div>
+						<span class="s8" style="color: #FE693F">·</span>
+						<h2>累计收益</h2>
+					</div>
+					<div class="b1112">
+						<span class="s6" style="color: red;">·</span>
+						<p>昨日收益</p>
+						<span class="s7" style="color: #FE7585;">+{{ y }}.00</span>
+						<div class="b11111"></div>
+						<span class="s8" style="color: #FF8B75">+{{ h }}.00</span>
+					</div>
+				</div>
+
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+	<section class="section2">
+		<a href="{% url 'financing:person' %}" class="a1">
+			<img src="{% static 'img/tds14.png'%}" alt="" class="i3" width="100%" height="100%">
+			<p class="p1">我的卡包</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<section class="section2">
+		<a href="" class="a1">
+			<img src="{% static 'img/tds15.png'%}" alt="" class="i3" width="100%" height="100%">
+			<p class="p1">邀请好友</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<section class="section2">
+		<a href="{% url 'financing:cate' %}" class="a1">
+			<img src="{% static 'img/tds16.png'%}" alt="" class="i3" width="100%" height="100%">
+			<p class="p1">我的银行卡</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<section class="section2">
+		<a href="{% url 'financing:addcate' %}" class="a1">
+			<img src="{% static 'img/tds17.png'%}" alt="" class="i3" width="100%" height="100%">
+			<p class="p1">我的客服</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<footer>
+    <ul>
+        <li>
+            <img src="{% static 'img/home.png' %}" alt="">
+            <span>首页</span>
+        </li>
+        <li>
+            <img src="{% static 'img/product1.png' %}" alt="">
+            <span>产品</span>
+        <li>
+            <img src="{% static 'img/class.png' %}" alt="">
+            <span>课堂</span>
+        </li>
+        <li>
+            <img src="{% static 'img/message.png' %}" alt="">
+            <span>消息</span>
+            {% if not num == "" %}
+            <div class="num">{{ num }}</div>
+            {% endif %}
+        <li>
+            <img src="{% static 'img/user1.png' %}" alt="">
+            <span>我的</span>
+        </li>
+    </ul>
+</footer>
+</body>
+<script>
+	$(".s1").text($(".b11").length)
+    if($(".b11").length==0){
+        $(".s1").text(0)
+        $(".section3").remove()
+    }
+	$("footer ul li:first-child").click(function () {
+	location.assign("/index")
+    })
+    $("footer ul li:nth-child(3)").click(function () {
+        location.assign("/zixun")
+    })
+    $("footer ul li:nth-child(2)").click(function () {
+        location.assign("/market")
+    })
+    $("footer ul li:nth-child(4)").click(function () {
+        location.assign("/message")
+    })
+    $("footer ul li:nth-child(5)").click(function () {
+        location.assign("/myindex")
+    })
+</script>
+</html>

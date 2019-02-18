@@ -1,0 +1,518 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+}
+
+header{
+    background: #4b98ff;
+    height: 1.3rem;
+    width: 100%;
+
+}
+.zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header img{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+}
+header div{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 0.5;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+section{
+    width: 100%;
+}
+section main{
+    padding: 0 0.24rem;
+}
+section main .buy{
+    margin-top: 0.4rem;
+    color: rgba(0,0,0,0.7);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+section main .money{
+    color: #4b98ff;
+    font-family: San Francisco Display;
+    font-size: 0.68rem;
+    font-weight: bold;
+}
+section main .money span{
+    color: #80b6ff;
+}
+section main .pay{
+    width: 100%;
+    height: auto;
+    background: #fff;
+    box-shadow: 0 0 0.02rem 0.02rem #eaeaea;
+    margin-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+section main .pay .main{
+    padding: 0.28rem 0.24rem 0;
+}
+section main .pay .mode{
+    height: 0.5rem;
+    line-height: 0.5rem;
+}
+section main .pay .mode .spot{
+    width: 0.07rem;
+    height: 0.07rem;
+    border-radius: 50%;
+    background: #4B98FF;
+    float: left;
+    margin-top: 0.22rem;
+}
+section main .pay .mode span{
+    color: rgba(0,0,0,0.7);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+    float: left;
+    margin-left: 0.12rem;
+}
+section main .pay .paymode{
+    margin-top: 0.16rem;
+}
+section main .pay .paymode ul li{
+    height: 1.07rem;
+    border-bottom: 2px solid rgba(0,0,0,0.03);
+    line-height: 1.07rem;
+    color: rgba(0,0,0,0.4);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.26rem;
+}
+section main .pay .paymode ul li img{
+    height: 0.73rem;
+    width: 0.73rem;
+    float: left;
+    margin-top: 0.2rem;
+    margin-right: 0.12rem;
+}
+section main .pay .paymode ul li .num{
+    width: 0.7rem;
+    height: 0.38rem;
+    border-radius: 0.1rem;
+    background: #73AFFF;
+    float: right;
+    margin-top: 0.38rem;
+    color: white;
+    font-family: San Francisco Display;
+    font-weight: bold;
+    font-size: 0.28rem;
+    text-align: center;
+    line-height: 0.38rem;
+}
+section main .pay .card{
+    margin-top: 0.24rem;
+}
+section main .pay .card ul li{
+    height: 2.18rem;
+    width: 100%;
+    margin-bottom: 0.46rem;
+}
+section main .pay .card ul li img{
+    height: 2.18rem;
+    width: 100%;
+}
+.zhezhao{
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.86);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.yes{
+    width: 6.55rem;
+    height: 3.9rem;
+    border-radius: 0.36rem;
+    background: white;
+    padding: 0 0.68rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.07rem 0.03rem rgba(88,88,88,0.15);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+.yes .close{
+    width: 0.32rem;
+    height: 0.32rem;
+    border-radius: 0.5rem;
+    background: #91c0fd;
+    color: white;
+    text-align: center;
+    line-height: 0.28rem;
+    font-size: 0.26rem ;
+    position: absolute;
+    top: -0.58rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.yes .cardlogo{
+    width: 100%;
+    height: 0.62rem;
+    margin-top: 0.3rem;
+}
+.yes .cardlogo img{
+    display: block;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 0.62rem;
+    height: 0.62rem;
+}
+.yes .txt{
+    color: rgba(0,0,0,0.4);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+    margin-top: 0.2rem;
+}
+.yes .money{
+    color: #4b98ff;
+    font-family: San Francisco Display;
+    font-size: 0.68rem;
+    font-weight: bold;
+    margin-top: 0.1rem;
+}
+.yes .money span{
+    color: #80b6ff;
+}
+.yes .line{
+    width: 100%;
+    height: 0.02rem;
+    background: rgba(0,0,0,0.05);
+    margin-top: 0.16rem;
+}
+.yes button{
+    display: block;
+    width: 4.18rem;
+    height: 0.65rem;
+    background: #FFBE40;
+    border: none;
+    outline: none;
+    border-radius: 0.12rem;
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.3rem;
+    right: 0;
+    left: 0;
+    margin: 0.24rem auto 0;
+}
+.fingerprint{
+    width: 6.55rem;
+    height: 5.14rem;
+    border-radius: 0.36rem;
+    background: white;
+    box-shadow: 0 0 0.07rem 0.03rem rgba(88,88,88,0.15);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+.fingerprint .txt{
+    color: rgba(0,0,0,0.4);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+    margin-top: 0.2rem;
+}
+.fingerprint .money{
+    color: #4b98ff;
+    font-family: San Francisco Display;
+    font-size: 0.68rem;
+    font-weight: bold;
+    margin-top: 0.05rem;
+}
+.fingerprint .money span{
+    color: #80b6ff;
+}
+.fingerprint .zhiwen{
+    width: 1.83rem;
+    height: 1.83rem;
+    border-radius: 50%;
+    background: rgba(243,243,243,0.3);
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: relative;
+}
+.fingerprint .zhiwen img{
+    display: block;
+    position: absolute;
+    left: .4rem;
+    top: 0.3rem;
+    width: 1.21rem;
+    height: 1.38rem;
+}
+.fingerprint .txt1{
+    color: rgba(0,0,0,0.3);
+    font-family: San Francisco Display;
+    font-weight: bold;
+    font-size: 0.26rem;
+    margin-top: 0.16rem;
+}
+.fingerprint .txt2{
+    color: rgba(0,0,0,0.3);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.26rem;
+    margin-top: 0.05rem;
+}
+.fingerprint .spot{
+    width: 0.12rem;
+    height: 0.12rem;
+    border-radius: 50%;
+    background: rgba(75,152,255,1);
+    right: 0;
+    left: 0;
+    margin: 0 auto 0.08rem;
+}
+.password{
+    width: 6.55rem;
+    height: 4.94rem;
+    border-radius: 0.36rem;
+    background: white;
+    padding: 0 0.42rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 0.07rem 0.03rem rgba(88,88,88,0.15);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+.password .txt{
+    color: rgba(0,0,0,0.4);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+    margin-top: 0.2rem;
+}
+.password .money{
+    color: #4b98ff;
+    font-family: San Francisco Display;
+    font-size: 0.68rem;
+    font-weight: bold;
+    margin-top: 0.05rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.03rem dashed #F3F3F3;
+}
+.password .money span{
+    color: #80b6ff;
+}
+.password .pass{
+    width: 100%;
+    height: 1.84rem;
+    border-bottom: 0.03rem dashed #F3F3F3;
+    padding-top: 0.18rem;
+    box-sizing: border-box;
+}
+.password .pass .tip{
+    color: rgba(0,0,0,0.3);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.26rem;
+}
+.password .pass .mimaspot{
+    width: 4.4rem;
+    right: 0;
+    left:0;
+    margin: 0.4rem auto 0;
+}
+.password .pass .mimaspot ul li{
+    width: 0.12rem;
+    height: 0.12rem;
+    background: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    float: left;
+    margin-left: 0.64rem;
+}
+.password .pass .mimaspot ul li:first-child{
+    margin-left: 0.2rem;
+}
+.password .pass .mima{
+    width: 4.4rem;
+    right: 0;
+    left:0;
+    margin: 0.8rem auto 0;
+}
+.password .pass .mima ul li{
+    float: left;
+    margin-left: 0.22rem;
+}
+.password .pass .mima ul li:first-child{
+    margin-left: 0;
+}
+.password .pass .mima ul li .line{
+    width: 0.54rem;
+    height: 0.06rem;
+    border-radius: 0.03rem;
+    background: rgba(0,0,0,0.1);
+}
+.password button{
+    display: block;
+    width: 2.2rem;
+    height: 0.55rem;
+    background: #2CD48F;
+    border: none;
+    outline: none;
+    border-radius: 0.12rem;
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.26rem;
+    right: 0;
+    left: 0;
+    margin: 0.3rem auto 0;
+}
+.password .jian2{
+    background: white;
+    color: rgba(94,210,162,0.7);
+    box-shadow: 0 0.02rem 0.01rem 0.01rem rgba(216,216,216,0.44);
+}
+.jianpan{
+    width: 100%;
+    height: 4.32rem;
+    background: #FAFAFA;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.jianpan ul{
+    width: 100%;
+    height: 4.32rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.jianpan ul li{
+    width: 33.3%;
+    height: 1.08rem;
+    color: rgba(0,0,0,0.6);
+    font-family: "苹方 粗体";
+    font-weight: bold;
+    font-size: 0.36rem;
+    text-align: center;
+    line-height: 0.76rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jianpan ul li div{
+    width: 0.71rem;
+    height: 0.71rem;
+    border-radius: 50%;
+    background: white;
+
+}
+.jianpan ul li img{
+    width: 0.4rem;
+    height: 0.3rem;
+}
+.section1{
+	overflow: hidden;
+	width: 100%;
+	height: 2.18rem;
+	margin: 0.46rem auto;
+	background-image: linear-gradient(to bottom,#5BBCFF,#6493FF);
+	border-radius: 0.12rem;
+	padding: 0.25rem 0.16rem;
+	box-sizing: border-box;
+}
+.section1 .box1{
+	width: 0.74rem;
+	height: 0.74rem;
+	float: left;
+}
+.section1 .box2{
+	width: 5rem;
+	height: 100%;
+	margin-left: 0.4rem;
+	float: left;
+}
+.section1 .box2 .p1{
+	font-size: 0.42rem;
+	color: #fff;
+}
+.section1 .box2 .p2{
+	margin-top: 0.05rem;
+	font-size: 0.34rem;
+	color: #D7E9FF;
+}
+.section1 .box2 span{
+	display: block;
+	margin-top: 0.1rem;
+	font-size: 0.42rem;
+	color: #fff;
+}
+.section2{
+	width: 100%;
+	height: 2.18rem;
+	margin: 0.46rem auto;
+	background-image: linear-gradient(to bottom,#FF6C58,#FE6D6A);
+	border-radius: 0.12rem;
+	padding: 0.25rem 0.16rem;
+	box-sizing: border-box;
+}
+.section2 .box1{
+	width: 0.74rem;
+	height: 0.74rem;
+	float: left;
+}
+.section2 .box2{
+	width: 5rem;
+	height: 100%;
+	margin-left: 0.4rem;
+	float: left;
+}
+.section2 .box2 .p1{
+	font-size: 0.42rem;
+	color: #fff;
+}
+.section2 .box2 .p2{
+	margin-top: 0.05rem;
+	font-size: 0.34rem;
+	color: #D7E9FF;
+}
+.section2 .box2 span{
+	display: block;
+	margin-top: 0.1rem;
+	font-size: 0.42rem;
+	color: #fff;
+}

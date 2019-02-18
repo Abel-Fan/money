@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品详情</title>
+    {% load static %}
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/echarts.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/xiangqing.css' %}">
+</head>
+<body>
+<header>
+    <div class="zhuangtai"></div>
+    <a href="{% url 'financing:market' %}"><img src="{% static 'img/return.png' %}" alt=""></a>
+    <div class="title"><span>产品详情</span></div>
+    <div class="imgR"><img src="{% static 'img/share.png' %}" alt=""></div>
+</header>
+<section>
+
+    <div class="content">
+            <div class="cTop">
+                <div class="wordL">{{ message.name }}</div>
+                <div class="wordR"><span style="color: #b6b6b6;">{{ message.num }}</span>  已购买该产品</div>
+            </div>
+            <div class="cBottom">
+                <div class="data">
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">最新净值</div>
+                        </div>
+                        <div class="dataD" style="color: #46a6ff">{{ message.latest_val }}</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word" style="width: 1.7rem">日涨跌幅（%）</div>
+                        </div>
+                        <div class="dataD" style="color: #3de0ac">{{ message.drop_range }}</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            {% if message.risk == 0 %}
+                            <div class="word">高风险</div>
+                            {% elif message.risk == 1 %}
+                            <div class="word">中风险</div>
+                            {% else %}
+                            <div class="word">低风险</div>
+                            {% endif %}
+                        </div>
+                        <div class="dataD" style="color: #ff6d34">QDII</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <nav>
+        <ul>
+            <li class="holder">
+                收益率走势
+                <div class="pointL" style="background: #b5cdff"></div>
+                <div class="pointR" style="background: #b5cdff"></div>
+            </li>
+            <li>
+                实时估值
+                <div class="pointL"></div>
+                <div class="pointR"></div>
+            </li>
+            <li>
+                单位净值
+                <div class="pointL"></div>
+                <div class="pointR"></div>
+            </li>
+        </ul>
+    </nav>
+    <div class="gap">
+        <div class="chart" style="box-sizing: border-box;width: 96%;height:300px;"></div>
+    </div>
+    <div class="content">
+            <div class="cTop">
+                <div class="wordL">历史业绩</div>
+                <div class="wordR">近一周<span style="color: #b6b6b6;"><img src="{% static 'img/more.png' %}" alt=""></span></div>
+            </div>
+            <div class="cBottom">
+                <div class="data">
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">本产品</div>
+                        </div>
+                        <div class="dataD" style="color: #46a6ff">1.28%</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">泸深300</div>
+                        </div>
+                        <div class="dataD" style="color: #3de0ac">0.12</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">同类排行</div>
+                        </div>
+                        <div class="dataD" style="color: #fcac44">79/156</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% if M != 2 %}
+    <a href="{% url 'financing:buy' pid %}"><button class="button">立即购买</button></a>
+    {% endif %}
+</section>
+{{ rate }}
+<div class="bg">
+    <ul>
+        <li><img src="{% static 'img/QQ.png' %}" alt=""></li>
+        <li><img src="{% static 'img/wechat.png' %}" alt=""></li>
+        <li><img src="{% static 'img/moments.png' %}" alt=""></li>
+        <li><img src="{% static 'img/micro-blog.png' %}" alt=""></li>
+        <li><img src="{% static 'img/space.png' %}" alt=""></li>
+        <li><img src="{% static 'img/report.png' %}" alt=""></li>
+        <li><img src="{% static 'img/copy.png' %}" alt=""></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+<script>
+    let share=$(".imgR");
+    let bg=$(".bg");
+    share.click(function(){
+        bg.css("display", "block")
+        bg.css("height", "13.34rem")
+    })
+    let nav=$("nav li")
+    let img=$(".gap img")
+    let pointL=$(".pointL");
+    let pointR=$(".pointR");
+    nav.click(function(){
+        let index1 = $(this).index();
+        pointL.css("background", "#4790f1")
+            .eq(index1)
+            .css("background", "#b5cdff")
+        pointR.css("background", "#4790f1")
+            .eq(index1)
+            .css("background", "#b5cdff")
+        nav.removeClass("holder")
+            .eq(index1)
+            .addClass("holder");
+        img.css("z-index", "5")
+            .eq(index1)
+            .css("z-index", "10")
+    });
+    $(".bg").click(function () {
+        $(".bg").css("display","none")
+    })
+    $.ajax({
+        url:"{% url 'financing:rate' pid %}",
+        type:"post",
+        dataType: "json",
+        success:function(e){
+            console.log(e.rate)
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init($(".chart")[0]);
+            // 指定图表的配置项和数据
+            var option = {
+                    xAxis: {
+                        type: 'category',
+                        data: e.year,
+                        axisLine:{
+                            lineStyle:{
+                                color:'#989898',
+                            }
+                        },
+                        axisTick:{
+                            inside:true,
+                        }
+
+                    },
+                    yAxis: {
+                        type: 'value',
+                        max: 50.00,
+                        min: 20.00,
+                        splitNumber: 5.00,
+                        axisLine:{
+                            lineStyle:{
+                                color:'#989898',
+                            }
+                        },
+                        axisTick:{
+                            inside:true,
+                        }
+                    },
+                    grid:{
+                        left: '10%',
+                        right: '4%',
+                        bottom: '40%',
+                        top: '8%',
+                        tooltip: {
+                            show: false,
+                        },
+                    },
+                    series: [{
+                        data: e.rate,
+                        type: 'line',
+                        smooth: true,
+                        itemStyle: {
+                            normal: {
+                                lineStyle: {
+                                    width:3,
+                                    color: "#5FA2FF"
+                                },
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1,[{
+                                        offset: 0, color: '#d7f4f8' // 0% 处的颜色
+                                    }, {
+                                        offset: 0.5, color: '#eefcfd' // 100% 处的颜色
+                                    }, {
+                                        offset: 1, color: '#fff' // 100% 处的颜色
+                                    }]
+                                ),  //背景渐变色
+
+                            },
+
+                    },
+                        symbol:'none', //去掉折线点
+                        areaStyle: {normal: {}},
+
+                    }],
+                }
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option)
+                }
+                })
+
+
+
+</script>
+</html>

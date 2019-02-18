@@ -1,0 +1,148 @@
+@import url(base.css);
+*{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #fafafa;
+	overflow-x: hidden;
+}
+header{
+    width: 100%;
+    height: 1.3rem;
+    background: #4b98ff;
+    position: relative;
+}
+header .zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header a{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+    position: relative;
+}
+header  a img{
+    width: 0.3rem;
+    height: 0.28rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 30;
+}
+header .title{
+    width: 100%;
+    height: 0.9rem;
+    text-align: center;
+    line-height: 0.5rem;
+    position: absolute;
+    bottom: 0;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+.col img{
+    width: 0.4rem;
+    height: 0.4rem;
+    float:left;
+    margin-top:0.1rem;
+}
+.conts{
+	width: 100%;
+	height: auto;
+}
+.conts ul li{
+	width: 100%;
+	margin-top: 0.48rem;
+	height: 4.22rem;
+	background: #ffffff;
+}
+.conts .cou{
+	display: flex;
+	margin-top:0.16rem;
+	padding-left: 0.25rem
+}
+.conts .cou .col{
+	width: 33%;
+}
+.conts ul li .title{
+    font-family:"苹方";
+    font-size:0.26rem;
+    font-weight:bold;
+    color:rgba(0,0,0,0.6);
+}
+.cou .col .span{
+	width: auto;
+	height: 0.3rem;
+	font-size: 0.2rem;
+	color: #cacaca;
+	float:left;
+	margin-left: 0.3rem;
+	margin-top:0.16rem;
+}
+.plzq{
+	margin-top: 0.33rem;
+	padding-left: 5%;
+	font-size: 0.33rem;
+	color:#4b98ff;
+	font-weight: bold;
+	padding-bottom: 0.33rem;
+}
+.comments{
+	width: 100%;
+	height: auto;
+	background: #fff;
+}
+.comments ul li{
+	width: 100%;
+	height: auto;
+	display: flex;
+	padding-top: 0.3rem;
+	background: #ffffff;
+	padding-left: 5%;
+	padding-bottom: 0.33rem;
+	border-bottom: 1px solid #d7d9db;
+}
+.comments ul li .nr{
+	margin-left: 0.2rem;
+	width: 55%;
+	height: auto;
+	margin-top: 0.04rem;
+	font-size: 0.22rem;
+	color:#d7d9db;
+}
+.comments ul li .nr .cons{
+	margin-top: 0.04rem;
+}
+.comments ul li .wz{
+	margin-top: 0.04rem;	
+	font-size: 0.22rem;
+	color:#d7d9db;
+}
+.dj_btn{
+	width: 90%;
+	height: 0.8rem;
+	background: #4b98ff;
+	border-radius: 0.1rem;
+	font-size: 0.4rem;
+	color: #fff;
+	line-height: 0.8rem;
+	text-align: center;
+	margin-left: 5%;
+	margin-top: 0.2rem;
+	
+}
+

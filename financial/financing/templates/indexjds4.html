@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/indexjds4.css'%}">
+	<script src="{% static 'js/rem.js'%}"></script>
+	<script src="{% static 'js/indexjds4.js'%}"></script>
+</head>
+<body>
+	<header>
+		<div class="zhuangtai"></div>
+		<a href="{% url 'financing:myindex' %}"><img src="{% static 'img/return.png' %}" alt=""></a>
+		<div class="title"><span>我的客服</span></div>
+	</header>
+	<section class="section1">
+		<div class="box1">
+			<span>·&nbsp;</span>
+			<div class="b11">12</div>
+			<div class="b13" style="margin-left:0.05rem;margin-right:0.05rem;">:</div>
+			<div class="b12">45</div>
+			<p class="p1" style="margin-left:0.1rem;">AM</p>
+		</div>
+		<div class="box2">
+		{% for ite in wi %}
+			{% if ite.talker == 1 %}
+			<div class="xx">
+				<img src="{% static 'img/tds11.png'%}" alt="" class="i1">
+				<div class="b21">
+					<span>·</span>
+					<p>{{ ite.gt_con }}</p>
+				</div>
+			</div>
+			{% elif ite.talker == 0 %}
+			<div class="yy">
+				<div class="b22">
+					<span>·</span>
+					<p>{{ ite.gt_con }}</p>
+				</div>
+			</div>
+			{% elif ite.talker == 3 %}
+			<div class="yy">
+				<div class="b22">
+					<span>·</span>
+					<p>{{ ite.gt_con }}</p>
+				</div>
+			</div>
+			{% endif %}
+		{% endfor %}
+		</div>
+	</section>
+
+	<section class="section2">
+		{% csrf_token %}
+
+		<div class="box2">
+			<p>·</p>
+			<input type="text" placeholder="请输入你想要说的话">
+			
+		</div>
+		<div class="box3">
+			<img src="{% static 'img/tds19.png'%}" alt="" width="100%" height="100%">
+		</div>
+		<div class="box3">
+			<img src="{% static 'img/tds18.png'%}" alt="" width="100%" height="100%">
+		</div>
+<form action="/list_cate/" method="post">
+		<div class="box5">
+			<input type="text" placeholder="输入你想说的话" class="i2" name="gt_con">
+			<button type="submit" class="i3">发送</button>
+		</div>
+</form>
+	</section>
+	<section class="section3">
+		<div class="box4">
+			<div class="b41">
+				<img src="{% static 'img/tds22.png'%}" alt="" width="100%" height="100%">
+			</div>
+		</div>
+	</section>
+</body>
+</html>

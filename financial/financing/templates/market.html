@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品-市场</title>
+    {% load static %}
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/market.css' %}">
+
+</head>
+<body>
+<style>
+    a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+    footer ul li .num{
+        width: 0.34rem;
+        height: 0.24rem;
+        background: #FFF1D8;
+        border-radius: 0.12rem;
+        position: absolute;
+        top: 0.08rem;
+        right: -0.2rem;
+        font-size: 0.24rem;
+        font-family: San Francisco Display;
+        font-weight: bold;
+        color: #FFD1A8;
+        text-align: center;
+        line-height: 0.24rem;
+    }
+</style>
+<header>
+    <div class="zhuangtai"></div>
+    <div><span>产品</span></div>
+</header>
+<nav>
+    <div class="nav">
+        <div class="market holder">
+            市场
+            <div class="pointL" style="background: #b5cdff"></div>
+            <div class="pointR" style="background: #b5cdff"></div>
+        </div>
+        <div class="market">
+            持有
+            <div class="pointL"></div>
+            <div class="pointR"></div>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="section" style="z-index: 10;">
+        {% for product in products %}
+        <a href="{% url 'financing:xiangqing' product.id %}" style="color: #000;cursor: pointer;z-index: 999;">
+        <div class="content">
+            <div class="cTop">
+                <div class="wordL">{{ product.name }}</div>
+                {% if product.risk == 0 %}
+                <div class="wordM">{{ product.get_risk_display }}</div>
+                {% elif product.risk == 1 %}
+                <div class="wordM2">{{ product.get_risk_display }}</div>
+                {% else %}
+                <div class="wordM1">{{ product.get_risk_display }}</div>
+                {% endif %}
+                <div class="wordR"><span style="color: #b6b6b6;">{{ product.num }}</span>  已购买该产品</div>
+            </div>
+            <div class="cBottom">
+                <div class="data">
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">起投金额</div>
+                        </div>
+                        <div class="dataD" style="color: #46a6ff">{{ product.startmoney }}<span style="color: #b1d9ff">.00</span></div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">投资期限</div>
+                        </div>
+                        <div class="dataD" style="color: #3de0ac">{{ product.investment_date }}</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">年化收益</div>
+                        </div>
+                        <div class="dataD" style="color: #fcac44">{{ product.annual_income }}<span style="color: #ffcf91">%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="section">
+        {% for product in selfProducts %}
+        <a href="{% url 'financing:xiangqing' product.p_id %}" style="color: #000;cursor: pointer;z-index: 999;">
+        <div class="content">
+            <div class="cTop">
+                <div class="wordL">{{ product.p.name }}</div>
+                <div class="wordR">离投资期限<span style="color: #b6b6b6;">{{ product.dateLimit }}</span>天</div>
+            </div>
+            <div class="cBottom">
+                <div class="data">
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">投资金额</div>
+                        </div>
+                        <div class="dataD" style="color: #46a6ff">{{ product.p.money }}<span style="color: #b1d9ff">.00</span></div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">昨日收益</div>
+                        </div>
+                        <div class="dataD" style="color: #3de0ac">{{ product.y_earning }}</div>
+                    </div>
+                    <div class="dataB">
+                        <div class="dataU">
+                            <div class="circle"></div>
+                            <div class="word">持有收益</div>
+                        </div>
+                        <div class="dataD" style="color: #fcac44">{{ product.h_earning }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+<footer>
+    <ul>
+        <li>
+            <img src="{% static 'img/home.png' %}" alt="">
+            <span>首页</span>
+        </li>
+        <li>
+            <img src="{% static 'img/product.png' %}" alt="">
+            <span>产品</span>
+        <li>
+            <img src="{% static 'img/class.png' %}" alt="">
+            <span>课堂</span>
+        </li>
+        <li>
+            <img src="{% static 'img/message.png' %}" alt="">
+            <span>消息</span>
+            {% if not num == "" %}
+            <div class="num">{{ num }}</div>
+            {% endif %}
+        <li>
+            <img src="{% static 'img/user.png' %}" alt="">
+            <span>我的</span>
+        </li>
+    </ul>
+</footer>
+</body>
+<script>
+    let market=$(".market");
+    let section=$(".section");
+    let pointL=$(".pointL");
+    let pointR=$(".pointR");
+    market.click(function(){
+        let index1 = $(this).index()
+        pointL.css("background", "#4790f1")
+            .eq(index1)
+            .css("background", "#b5cdff")
+        pointR.css("background", "#4790f1")
+            .eq(index1)
+            .css("background", "#b5cdff")
+        market.removeClass("holder")
+            .eq(index1)
+            .addClass("holder");
+        section.css("z-index", "5")
+            .eq(index1)
+            .css("z-index", "10")
+    });
+    $("footer ul li:first-child").click(function () {
+        location.assign("/index")
+    })
+    $("footer ul li:nth-child(3)").click(function () {
+        location.assign("/zixun")
+    })
+    $("footer ul li:nth-child(2)").click(function () {
+        location.assign("/market")
+    })
+    $("footer ul li:nth-child(4)").click(function () {
+        location.assign("/message")
+    })
+    $("footer ul li:nth-child(5)").click(function () {
+        location.assign("/myindex")
+    })
+</script>
+</html>

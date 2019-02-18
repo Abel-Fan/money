@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/paysuccess.css' %}">
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jQuery.js' %}"></script>
+    <title>注册成功</title>
+</head>
+<body>
+    <div class="yes"><img src="{% static 'img/success.png' %}" alt=""></div>
+    <div class="txt">恭喜您<br>注册成功</div>
+    <button class="see" style="margin-top: 1.5rem">立即登录</button>
+    <button class="buy">完善信息</button>
+</body>
+<script>
+    $(".see").click(function () {
+        location.assign("/login")
+    })
+</script>
+</html>

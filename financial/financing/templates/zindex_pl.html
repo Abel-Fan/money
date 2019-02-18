@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/zindex_pl.css'%}">
+	<script type="text/javascript" src="{% static 'js/jQuery.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/rem.js'%}"></script>
+	<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_995326_gvvwnqh875b.css">
+</head>
+<body>
+	<div class="plk">
+		<textarea  class="pinglun" placeholder="在此处输入评论内容"></textarea>
+		<div class="peijian">
+			<div class="jiatu"><img src="{% static 'img/jiatu.png' %}"  style="width: 0.8rem;height: 0.8rem;"></div>
+			<div class="biaoqing"><img src="{% static 'img/biaoqing.png' %}"  style="width: 0.8rem;height: 0.8rem;margin: auto"></div>
+			<div class="shanchu"><img src="{% static 'img/shanchu.png' %}"  style="width: 0.8rem;height: 0.8rem;margin: auto"></div>
+			<div class="zishu"><span class="contentcount">0</span><span>/150</span></div>
+		</div>
+	</div>
+	<div class="ok">
+
+		<a href="{% url 'financing:zixun' %}" class="cancel" >取消发送</a>
+		<button class="confirm" onclick="commit({{ v_id }})">确认发送</button>
+	</div>
+	<div class="bot">
+		<div class="row1">
+			<div class="ones">1</div>
+			<div class="ones">2</div>
+			<div class="ones">3</div>
+		</div>
+		<div  class="row1">
+			<div class="ones">4</div>
+			<div class="ones">5</div>
+			<div class="ones">6</div>
+		</div>
+		<div  class="row1">
+			<div class="ones">7</div>
+			<div class="ones">8</div>
+			<div class="ones">9</div>
+		</div>
+		<div  class="row2">
+			<div class="zeros" style="background:#fafafa"></div>
+			<div class="zeros">0</div>
+			<div class="zeros"><i class="i iconfont icon-shanchu"></i></div>
+		</div>
+	</div>
+	<input type="hidden" value="{{ v_id }}" id="v_id" >
+</body>
+<script>
+function commit(v_id){
+	$(".bot").css({'display':'none'})
+	let pinglun = $(".pinglun").val()
+
+	$.ajax({
+		url:"commit/",
+		type:"POST",
+		dataType:"json",
+		data:{'pl':pinglun,'v_id':v_id},
+		success:function(e){
+			if (e.message == "ok"){
+				console.log(v_id)
+				location.assign("/comment/"+v_id)
+			}
+		}
+	})
+}
+
+$(".plk").click(function(){
+	$(".bot").css({'display':'block'})
+})
+
+$('.pinglun').bind('input propertychange', function () {
+	var fizeNum = $(this).val().length;
+	if (fizeNum > 200) {
+		var char = $(this).val();
+		char = char.substr(0,150);
+		$(this).val(char);
+		fizeNum = 150;
+		tooltipsShow('消息内容不能超过150字');
+ 	}
+	$('.contentcount').text(fizeNum);
+});
+
+</script>
+</html>

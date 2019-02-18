@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/indexjds1.css'%}">
+	<script src="{% static 'js/rem.js'%}"></script>
+	<script src = "{% static 'js/jidexjds1.js'%}"></script>
+</head>
+<body>
+<header>
+    <div class="zhuangtai"></div>
+    <a href="{% url 'financing:myindex' %}"><img src="{% static 'img/return.png' %}" alt=""></a>
+    <div class="title"><span>设置</span></div>
+</header>
+	<section class="section1">
+		<a href="" class="a1">
+			<img src="{% static 'img/tujds2.png'%}" alt="" class="i1" width="100%" height="100%">
+			<p class="p1">账号管理</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<section class="section1">
+		<a href="" class="a1">
+			<img src="{% static 'img/tujds3.png'%}" alt="" class="i1" width="100%" height="100%">
+			<p class="p1">清除缓存</p>
+			<p class="p2"><span class="s1">286</span>M</p>
+		</a>
+	</section>
+	<section class="section2">
+		
+		<img src="{% static 'img/tds4.png'%}" alt="" class="i1" width="100%" height="100%">
+		<p class="p1">指纹解锁</p>
+		<div class="box1">
+			<div class="b11"></div>
+		</div>
+		
+		
+	</section>
+	<section class="section1">
+		<a href="" class="a1">
+			<img src="{% static 'img/tuds5.png'%}" alt="" class="i1" width="100%" height="100%">
+			<p class="p1">关于我们</p>
+			<img src="{% static 'img/tds7.png'%}" alt="" class="i2" width="100%" height="100%">
+		</a>
+	</section>
+	<section class="section2">
+		
+		<img src="{% static 'img/tds6.png'%}" alt="" class="i1" width="100%" height="100%">
+		<p class="p1">开启推送</p>
+		<div class="box2">
+			<div class="b21"></div>
+		</div>
+		
+	</section>
+	<button class="b1"><a href="/loginout" class="a2">安全退出</a></button>
+</body>
+</html>

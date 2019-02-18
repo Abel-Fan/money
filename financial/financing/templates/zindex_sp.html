@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>视频播放</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/zindex_sp.css'%}">
+	<script type="text/javascript" src="{% static 'js/rem.js'%}"></script>
+	<script type="text/javascript" src="{% static 'js/jQuery.js'%}"></script>
+
+</head>
+<body>
+	<!-- 顶部 -->
+	<header>
+		<div class="zhuangtai"></div>
+		<a href="{% url 'financing:zixun' %}"><img src="{% static 'img/return.png' %}" alt=""></a>
+		<div class="title"><span>视频播放</span></div>
+	</header>
+
+	<!-- 视频 -->
+	<section class="conts">
+		<ul>
+			<li>
+				<video width="100%" height="149" controls="controls" poster="" src="/{{ nr.vid }}"></video>
+				<div style="padding-left: 0.25rem;" class="title">{{ nr.title }}</div>
+				<div class="cou">
+					<div class="col">
+						<img src="{% static 'img/witch.png' %}"><div class="span">237290</div>
+					</div>
+					<div class="col">
+						<img src="{% static 'img/time1.png' %}"><div class="span">{{ nr.c_time }}</div>
+					</div>
+					<div class="col">
+						<a href="javascript:;"><img src="{% static 'img/hf.png '%}"><div class="span">{{ num }}</div></a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<div class="plzq">
+		评论专区
+	</div>
+	<section class="comments">
+		<ul>
+			{% for item in cons %}
+			<li>
+				<img src="{% static 'img/wrp.jpg'%}" style="width: 0.7rem;height: 0.7rem;border-radius: 50%;">
+				<div class="nr">
+					<div class="name">{{ item.u_id }}</div>
+					<div class="cons">{{ item.con }}</div>
+				</div>
+				<div class="wz">
+					<div>·&nbsp太原理工大学</div>
+					<div style="margin-top: 0.04rem">·&nbsp{{ item.c_time }}</div>
+				</div>
+			</li>
+			{% endfor %}
+
+		</ul>
+	</section>
+	<a href="{% url 'financing:compl' nr.id %}"><div class="dj_btn">点击此处添加评论</div></a>
+</body>
+</html>

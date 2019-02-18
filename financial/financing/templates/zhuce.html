@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/zhuce.css' %}">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_995693_j3c694oirmm.css">
+</head>
+<style>
+*{
+    font-size: 14px;
+img{
+    border: none;
+}
+button:focus{
+    outline: none;
+}
+input:focus{
+    outline: none;
+}
+input::-webkit-input-placeholder{ /* WebKit browsers */
+    color: rgba(0,0,0,0);
+}
+input:-moz-placeholder{ /* Mozilla Firefox 4 to 18 */
+    color: rgba(0,0,0,0);
+}
+input::-moz-placeholder{ /* Mozilla Firefox 19+ */
+    color: rgba(0,0,0,0);
+}
+input:-ms-input-placeholder{ /* Internet Explorer 10+ */
+    color: rgba(0,0,0,0);
+}
+</style>
+<body>
+<main>
+<header>
+<a class="header_left" href="/login/">
+   <img src="{% static 'img/return.png' %}" alt="">
+</a>
+<span>注册</span>
+</header>
+    <form action="/zhuce/" method="post" >
+        {% csrf_token %}
+        <ul class="input_box">
+            <li>
+                <div class="input_in_box">
+                    <div class="icon_box">
+                        <i class="iconfont icon-tel" style="font-size: 0.34rem; color: #ffffff" ></i>
+                    </div>
+                    {{ form.username }}
+                    <!--<input class="int_box" type="text" required name="name" placeholder="请在此填写你的账号" style="color: 000;">-->
+                </div>
+            </li>
+            <!--<li class="two">-->
+                <!--<div class="input_in_box1">-->
+                    <!--<div class="icon_box1" style="background:-webkit-linear-gradient(top,#50d136,#50d136)">-->
+                        <!--<i class="iconfont icon-buoumaotubiao12" style="font-size: 0.34rem; color: #ffffff" ></i>-->
+                    <!--</div>-->
+                    <!--<input class="int_box1" type="text" placeholder="输入验证码" style="color:#d9d9d9;">-->
+                    <!--&lt;!&ndash;<div class="yzm_xs_box">获取验证码</div>&ndash;&gt;-->
+                    <!--<div class="yzm_xs_box1"><span>8</span>s获取验证码</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <li>
+                <div class="input_in_box">
+                    <div class="icon_box" style="background:-webkit-linear-gradient(top,#ffce84,#ffd89e)">
+                        <i class="iconfont icon-suo" style="font-size: 0.34rem; color: #ffffff" ></i>
+                    </div>
+                    {{ form.password }}
+                    <!--<input class="int_box" type="password" required name="password" placeholder="设置您的登陆密码" style="color: #000;">-->
+                </div>
+            </li>
+            <li>
+                <div class="input_in_box" style="position:relative;">
+                    <div class="icon_box" style="background:-webkit-linear-gradient(top,#ffce84,#ffd89e)">
+                        <i class="iconfont icon-suo" style="font-size: 0.34rem; color: #ffffff" ></i>
+                    </div>
+                    {{ form.captcha }}
+                </div>
+            </li>
+        </ul>
+
+        <div class="wenben_box" style="padding-right: 0.48rem;box-sizing: border-box;">
+            <a href="javascript:;" class="wz_tz" style="color:#a0c3fd; float:left;margin-left: 1.35rem; margin-top:0.48rem;"><label><input name="Fruit" type="checkbox" value="" id="yes" /></label> 我已阅读《注册与服务协议风险提示书》 </a>
+        </div>
+        <div class="btn_box">
+            <a href="javascript:;" class="btn"><button type="submit" style="border: none;background: none;width: 100%;height: 100%;color:#fff;">下一步</button></a>
+        </div>
+    </form>
+    <div class="btn_box" >
+        <a href="/login"  class="btn" style="background: #f8f8f8;box-shadow: 0 0.08rem 0.04rem 0.04rem rgba(242,242,242,0.8);; color: #0070d2">已有账号去登陆</a>
+    </div>
+</main>
+</body>
+<script>
+    $(".captcha").click(function(){
+    $.ajax({
+        url:"/captcha/refresh/",
+        dataType:"json",
+        success: function(e){
+            $(".captcha").attr("src",e['image_url'])
+            $("#id_captcha_0").val(e['key'])
+        }
+    })
+})
+$("#id_captcha_1").attr("placeholder","请输入验证码")
+$("#id_username").attr("placeholder","请在此填写你的账号")
+$("#id_password").attr("placeholder","设置您的登陆密码")
+$(".btn button").click(function(){
+    if($("#yes").is(':checked')!=true){
+        if($(".p").length==0){
+        $(".wenben_box").append($(`<div style="text-align:center;width:100%;color:red;padding-left:0.48rem;" class="p">请勾选《注册与服务协议风险提示书》</div>`))
+        }
+        return false;
+    }
+    else{
+        $(".p").remove()
+    }
+})
+
+</script>
+</html>

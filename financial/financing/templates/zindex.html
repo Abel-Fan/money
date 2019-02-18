@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>首页</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+	<script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jQuery.js' %}"></script>
+</head>
+<style>
+footer ul li .num{
+    width: 0.34rem;
+    height: 0.24rem;
+    background: #FFF1D8;
+    border-radius: 0.12rem;
+    position: absolute;
+    top: 0.08rem;
+    right: -0.2rem;
+    font-size: 0.24rem;
+    font-family: San Francisco Display;
+    font-weight: bold;
+    color: #FFD1A8;
+    text-align: center;
+    line-height: 0.24rem;
+}
+</style>
+<body>
+	<header class="header">
+		<div class="banner">
+			<ul class="imgBox">
+	            <li>
+					<a class="p3" href="javascript:;" style="background: none;left:0px;">
+						<img style="" src="{% static 'img/guanyuwomen.jpg' %}" alt="">
+	            	</a>
+				</li>
+	            <li>
+					<a class="p2" href="javascript:;">
+	                    <img src="{% static 'img/guanyuwomen.jpg' %}" alt="">
+	                </a>
+				</li>
+	            <li>
+					<a class="p1" href="javascript:;">
+	                	<img src="{% static 'img/guanyuwomen.jpg' %}" alt="">
+	            	</a>
+				</li>
+	        </ul>
+	        <div class="circleBtn">
+	            <div class="circle btn"></div>
+	            <div class="circle"></div>
+	            <div class="circle"></div>
+	        </div>
+		</div>
+	</header>
+	<!-- 光大永鑫混合基地 -->
+	<div class="nav">
+			<a href="{% url 'financing:xiangqing' product.id%}" style="color:#333;">
+			<div class="qbtitle"><span class="titles">{{ product.name }}</span>
+					{% if product.risk == 0 %}
+					<div class="gfx">{{ product.get_risk_display }}</div>
+					{% elif product.risk == 1 %}
+					<div class="gfx1" style="background: #eafbed;color: #3de05c;">{{ product.get_risk_display }}</div>
+					{% else %}
+					<div class="gfx2"  style="background: #b0b0b0;color: #333;">{{ product.get_risk_display }}</div>
+					{% endif %}
+			</div>
+
+			<div class="qbtitlez">
+				<div class="left">
+					<div><span style="color: #46a6ff;font-size: 0.36rem;">·</span> <span style="color: #dbdbdb"> 起投金额</span></div>
+					<div style="color: #46a6ff;margin-left:0.1rem;" class="price">&nbsp&nbsp{{ product.startmoney }}.00</div>
+				</div>
+				<div class="cen">
+					<div><span style="color: #3de0ac;font-size: 0.36rem;">·</span> <span style="color: #dbdbdb"> 投资期限</span></div>
+					<div style="color: #3de0ac" class="price">&nbsp&nbsp{{ product.investment_date }}</div>
+				</div>
+				<div class="right">
+					<div><span style="color: #fcac44;font-size: 0.36rem;">·</span> <span style="color: #dbdbdb"> 年化收益</span></div>
+					<div style="color: #fcac44" class="price">&nbsp&nbsp{{ product.annual_income }}%</div>
+				</div>
+			</div>
+			<div class="qbtitled">
+				<div class="left">
+					<span class="per">{{ product.num }}</span>
+					<span > &nbsp已购买该物品</span>
+				</div>
+				{% if M != 2 %}
+				<button class="right" style="border:none">立即抢购</button>
+				{% endif %}
+			</div>
+			</a>
+	</div>
+	<!-- 通告 -->
+	<div class="tongzhi">
+		<img class="i7" src="{% static 'img/notice.png' %}" alt="">
+		<span>理财派新版本即将上线</span>
+	</div>
+	<!-- 千万人都在使用 -->
+	<div class="navs">
+		<div class="qbtitle">
+			<span class="titles">千万人都在使用</span>
+			<div class="gfx">可靠</div>
+			<div class="circleBtn">
+	            <div class="circle btn" style="background: rgba(0,0,0,0.4);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.3);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.1);"></div>
+	        </div>
+		</div>
+		<div class="qbtitlez">
+			<div class="left">
+				<div><span style="color: #46a6ff">·</span> <span style="color: #dbdbdb"> 累计服务用户</span></div>
+				<div style="color: #46a6ff" class="price">&nbsp&nbsp1428万人</div>
+			</div>
+			<div class="cen">
+				<div><span style="color: #3de0ac">·</span> <span style="color: #dbdbdb"> 累计用户赚取</span></div>
+				<div style="color: #3de0ac" class="price">&nbsp&nbsp52亿元</div>
+			</div>
+			<div class="right">
+				<div><span style="color: #fcac44">·</span> <span style="color: #dbdbdb"> 累计用户交易额</span></div>
+				<div style="color: #fcac44" class="price">&nbsp&nbsp1562亿元</div>
+			</div>
+		</div>
+	</div>
+	<!-- 靠谱的理财平台 -->
+	<div class="navss">
+		<div class="qbtitle">
+			<span class="titles">靠谱的理财平台</span>
+			<div class="gfx">专业</div>
+			<div class="circleBtn">
+	            <div class="circle btn" style="background: rgba(0,0,0,0.4);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.3);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.1);"></div>
+	        </div>
+		</div>
+		<div class="qbtitlez">
+			<div class="shang">
+				<div class="left" style="position:relative;">
+					<img src="{% static 'img/provide.png' %}" alt="">
+					<span class="con">等保三级文案证明</span>
+				</div>
+				<div class="right" style="position:relative;">
+					<img src="{% static 'img/capital.png' %}" alt="">
+					<span class="con">平台五亿注册资本</span>
+				</div>
+			</div>
+			<div class="xia">
+				<div class="left" style="position:relative;">
+					<img src="{% static 'img/association.png' %}" alt="" style="width:0.58rem;height:0.53rem;">
+					<span class="con">中国互联网金融协会</span>
+				</div>
+				<div class="right" style="position:relative;">
+					<img src="{% static 'img/Grade.png' %}" alt="">
+					<span class="con">AAA级信用评分</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 平台真实透明 -->
+		<div class="navsss">
+		<div class="qbtitle">
+			<span class="titles">平台真实透明</span>
+			<div class="gfx">保障</div>
+			<div class="circleBtn">
+	            <div class="circle btn" style="background: rgba(0,0,0,0.4);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.3);"></div>
+	            <div class="circle" style="background: rgba(0,0,0,0.1);"></div>
+	        </div>
+		</div>
+		<div class="qbtitlez" style="margin-bottom: 1.46rem;">
+			<div class="shang">
+				<div class="left">
+					<img src="{% static 'img/people.png' %}" alt="">
+					<div class="con">真实投资人</div>
+				</div>
+				<div class="cen">
+					<img src="{% static 'img/transparent.png' %}" alt="">
+					<div class="con">信息透明</div>
+				</div>
+				<div class="right">
+					<img src="{% static 'img/transparent1.png' %}" alt="">
+					<div class="con">信息透明</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 尾部 -->
+	<footer>
+    <ul>
+        <li>
+            <img src="{% static 'img/home1.png' %}" alt="">
+            <span>首页</span>
+        </li>
+        <li>
+            <img src="{% static 'img/product1.png' %}" alt="">
+            <span>产品</span>
+        <li>
+            <img src="{% static 'img/class.png' %}" alt="">
+            <span>课堂</span>
+        </li>
+        <li>
+            <img src="{% static 'img/message.png' %}" alt="">
+            <span>消息</span>
+            {% if not num == "" %}
+            <div class="num">{{ num }}</div>
+            {% endif %}
+        <li>
+            <img src="{% static 'img/user.png' %}" alt="">
+            <span>我的</span>
+        </li>
+    </ul>
+</footer>
+</body>
+</html>
+<script>
+	$("button").click(function(){
+		location.assign("{% url 'financing:buy' product.id %}")
+	})
+	$("footer ul li:first").click(function () {
+        location.assign("/")
+    })
+	$("footer ul li:nth-child(2)").click(function () {
+        location.assign("/market")
+    })
+    $("footer ul li:nth-child(3)").click(function () {
+        location.assign("/zixun")
+    })
+    $("footer ul li:nth-child(4)").click(function () {
+        location.assign("/message")
+    })
+    $("footer ul li:nth-child(5)").click(function () {
+        location.assign("/myindex")
+    })
+	$(".section1 .box1").each(function(e){
+		$(this).click(function(e){
+			$(".section1 .box1").children(".i1").css({'color':'#C7E0FF'})
+			$(this).children(".i1").css({'color':'#6C9DE0'})
+			$(".section1 .box1").children(".p3").css({'color':'#C7E0FF'})
+			$(this).children(".p3").css({'color':'#6C9DE0'})
+		})
+	})
+
+	li=$(".imgBox li a")
+	point=$(".banner .circleBtn .circle")
+	//下一张
+	var cArr=["p3","p2","p1"];
+	var index=0;
+
+	function nextimg(){
+		cArr.push(cArr[0]);
+		cArr.shift();
+		li.each(function(i,e){
+			$(e).removeClass().addClass(cArr[i]);
+		})
+		index++;
+		if (index>2) {
+			index=0;
+		}
+		show();
+	}
+	point.each(function(){
+		$(this).click(function(){
+			var myindex=$(this).index();
+			var b=myindex-index;
+			if(b==0){
+				return;
+			}
+			else if(b>0) {
+				/*
+				 * splice(0,b)的意思是从索引0开始,取出数量为b的数组
+				 * 因为每次点击之后数组都被改变了,所以当前显示的这个照片的索引才是0
+				 * 所以取出从索引0到b的数组,就是从原本的这个照片到需要点击的照片的数组
+				 * 这时候原本的数组也将这部分数组进行移除了
+				 * 再把移除的数组添加的原本的数组的后面
+				 */
+				var newarr=cArr.splice(0,b);
+				cArr=$.merge(cArr,newarr);
+				li.each(function(i,e){
+				$(e).removeClass().addClass(cArr[i]);
+				})
+				index=myindex;
+				show();
+			}
+			else if(b<0){
+				/*
+				 * 因为b<0,所以取数组的时候是倒序来取的,也就是说我们可以先把数组的顺序颠倒一下
+				 * 而b现在是负值,所以取出索引0到-b即为需要取出的数组
+				 * 也就是从原本的照片到需要点击的照片的数组
+				 * 然后将原本的数组跟取出的数组进行拼接
+				 * 再次倒序,使原本的倒序变为正序
+				 */
+				cArr.reverse();
+				var oldarr=cArr.splice(0,-b)
+				cArr=$.merge(cArr,oldarr);
+				cArr.reverse();
+				li.each(function(i,e){
+					$(e).removeClass().addClass(cArr[i]);
+				})
+				index=myindex;
+				show()
+			}
+		})
+	})
+	//	鼠标移入box时清除定时器
+	$(".banner").mouseover(function(){
+		clearInterval(timer);
+	})
+
+	//	鼠标移出box时开始定时器
+	$(".banner").mouseleave(function(){
+		timer=setInterval(nextimg,4000);
+	})
+
+	function show(){
+		point.removeClass("btn").eq(index).addClass("btn");
+	}
+	timer=setInterval(nextimg,4000);
+
+</script>

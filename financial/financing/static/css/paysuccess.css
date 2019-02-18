@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+    background: #fafafa;
+    overflow: hidden;
+}
+.yes{
+    width: 100%;
+    text-align: center;
+    margin-top: 3.05rem ;
+}
+.yes img{
+    width: 4.8rem;
+    height: 3.14rem;
+}
+.txt{
+    color: rgba(0,0,0,0.4);
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+    text-align: center;
+}
+button{
+    display: block;
+    width: 4.32rem;
+    height: 0.7rem;
+    background: #4B98FF;
+    border: none;
+    outline: none;
+    border-radius: 0.12rem;
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.26rem;
+    right: 0;
+    left: 0;
+    margin: 0.24rem auto 0;
+    box-shadow: 0 0.02rem 0.01rem 0.01rem rgba(75,152,255,0.52);
+}
+.buy{
+    background: #fff;
+    color: #4B98FF;
+    box-shadow: 0 0.02rem 0.01rem 0.01rem rgba(193,193,193,0.52);
+    margin-top: 0.4rem;
+}
+
+
+

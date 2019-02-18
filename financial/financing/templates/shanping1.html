@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="{% static 'js/rem.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/shanping2.css' %}">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_995693_j3c694oirmm.css">
+</head>
+<body>
+<div class="big_box_box">
+<div class="big_box " style="z-index: 10">
+    <div class=" header">
+        <div class="header_bt" style="letter-spacing:0.15rem;color: #598aea;">低门槛加高回报</div>
+        <div class="header_bt" style="color: #969696; font-size: 0.32rem;">10元起投  随存随取</div>
+    </div>
+    <img src="{% static 'img/png8.png' %}" alt="" class="big_img">
+</div>
+<div class="big_box big_box1">
+    <div class=" header">
+        <div class="header_bt" style="letter-spacing:0.15rem; color: #598aea;">多维度风控保障</div>
+        <div class="header_bt" style="color: #969696; font-size: 0.32rem;">信用评级  AAA级</div>
+    </div>
+    <img src="{% static 'img/png7.png' %}" alt="" class="big_img" >
+</div>
+    <div class="big_box big_box2">
+        <div class=" header">
+            <div class="header_bt" style="letter-spacing:0.15rem; color: #598aea;">360度风险评估</div>
+            <div class="header_bt" style="color: #969696; font-size: 0.32rem;">量身定制理财方案</div>
+        </div>
+        <img src="{% static 'img/png9.png' %}" alt="" class="big_img" >
+    </div>
+</div>
+<div class="btn_box">
+    <ul class="btn_in_box">
+        <li class="xx"></li>
+        <li></li>
+        <li></li>
+</ul>
+</div>
+<div class="btn_box1">
+    <a href="/login" class="btn_in_box1">
+        立即体验
+    </a>
+</div>
+</body>
+<script>
+$(function() {
+    let box= $(".big_box");
+    let yuan_box=$(".btn_box")
+    let yuan = $(".btn_in_box li");
+    let btn = $(".btn_box1");
+    let num=0
+    let t = setInterval(move, 2000);
+    box.hover(function () {
+        clearInterval(t);
+    },function () {
+        t = setInterval(move, 2000);
+    });
+    function move(){
+        if (true) {
+            num++;
+            if (num == yuan.length) {
+                clearInterval(t);
+                yuan_box.css("display"," none");
+                btn.css("display","block");
+            }
+        box.css("z-index", "5").eq(num).css("z-index", "10");
+        yuan.removeClass("xx").eq(num).addClass("xx");
+        }
+    }
+})
+</script>
+</html>

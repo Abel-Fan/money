@@ -1,0 +1,257 @@
+@import url(base.css);
+*{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #fafafa;
+}
+
+.col img{
+    width: 0.4rem;
+    height: 0.4rem;
+    float:left;
+    margin-top:0.1rem;
+}
+.cont{
+	width: 100%;
+	height: auto;
+	display: none;
+}
+.cont ul li{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 0.48rem;
+	background: #ffffff;
+	//overflow:hidden;
+	padding-bottom:0.3rem;
+}
+.cont ul li .title{
+    font-family:"苹方";
+    font-size:0.26rem;
+    font-weight:bold;
+    color:rgba(0,0,0,0.6);
+}
+.conts ul li .title{
+    font-family:"苹方";
+    font-size:0.26rem;
+    font-weight:bold;
+    color:rgba(0,0,0,0.6);
+}
+.cont .cou{
+	display: flex;
+	padding-left: 0.25rem;
+    margin-top: 0.16rem;
+}
+.cont .cou .col{
+    height:0.5rem;
+	width: 33%;
+	line-height: 0.3rem;
+}
+.cont .cou .col .span{
+	width: auto;
+	height: 0.3rem;
+	font-size: 0.2rem;
+	color: #cacaca;
+	float:left;
+	margin-left: 0.3rem;
+	margin-top:0.16rem;
+}
+
+.conts{
+	width: 100%;
+	height: auto;
+
+}
+.conts ul li{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 0.48rem;
+	height: 3.22rem;
+	background: #ffffff;
+	padding-bottom:0.6rem;
+}
+.conts .cou{
+	display: flex;
+	margin-top:0.16rem;
+	padding-left: 0.25rem
+}
+.conts .cou .col{
+    height:0.5rem;
+	width: 33%;
+	line-height: 0.3rem;
+}
+.conts .cou .col .span{
+	width: auto;
+	height: 0.3rem;
+	font-size: 0.2rem;
+	color: #cacaca;
+	float:left;
+	margin-left: 0.3rem;
+	margin-top:0.16rem;
+}
+/*尾部*/
+.section1{
+	width: 100%;
+	height: 1.12rem;
+	background-color: #fff;
+	position: fixed;
+	bottom: 0rem;
+	left: 0rem;
+	display: flex;
+
+	justify-content: space-around;
+	align-items: center;
+	z-index: 20;
+}
+.section1 .box1{
+	width: 20%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.section1 .box1 .i1{
+	font-size: 0.43rem;
+	color: #C7E0FF;
+	overflow: hidden;
+}
+.section1 .box1 .i1:hover{
+	color:#C7E0FF;
+}
+.section1 .box1 .p3{
+	font-size: 0.12rem;
+	margin-top: 0.03rem;
+	color: #C7E0FF;
+}
+footer{
+    width: 100%;
+    height: 1.1rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    background: #fff;
+}
+footer ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+footer ul li{
+    width: 0.64rem;
+    height: 100%;
+    position: relative;
+    color: #bad9ff;
+}
+footer ul li:nth-child(3){
+    color: #6b9de0;
+}
+footer ul li img{
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.08rem;
+}
+footer ul li span{
+    width: 0.64rem;
+    position: absolute;
+    top: 0.68rem;
+    font-size: 0.22rem;
+    text-align: center;
+}
+footer ul li .num{
+    width: 0.34rem;
+    height: 0.24rem;
+    background: #FFF1D8;
+    border-radius: 0.12rem;
+    position: absolute;
+    top: 0.08rem;
+    right: -0.2rem;
+    font-size: 0.24rem;
+    font-family: San Francisco Display;
+    font-weight: bold;
+    color: #FFD1A8;
+    text-align: center;
+    line-height: 0.24rem;
+    }
+header{
+    width: 100%;
+    height: 1.3rem;
+    background: #4b98ff;
+}
+header .zhuangtai{
+    height: 0.4rem;
+    width: 100%;
+}
+header img{
+    width: 0.3rem;
+    height: 0.28rem;
+    margin-left: 0.2rem;
+    margin-top: 0.33rem;
+    float: left;
+}
+header div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 0.5rem;
+}
+header span{
+    color: white;
+    font-family: "苹方";
+    font-weight: bold;
+    font-size: 0.34rem;
+}
+nav{
+    width: 100%;
+    height: 1.08rem;
+    background: #4b98ff;
+    margin-top: -0.02rem;
+}
+nav .nav{
+    width: 3.79rem;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+nav .nav .market{
+    width: 1.75rem;
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    background: #4790f1;
+    position: relative;
+    font-family: "苹方";
+    font-size: 0.26rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #fefefe;
+}
+nav .nav .holder{
+    background: #fff;
+    color: #4b98ff;
+}
+nav .nav .market .pointL, nav .nav .market .pointR, nav .nav .holder .pointL, nav .nav .holder .pointR{
+    width: 0.06rem;
+    height: 0.06rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+nav .nav .market .pointL, nav .nav .holder .pointL{
+    left: 0.24rem;
+}
+nav .nav .market .pointR, nav .nav  .holder .pointR{
+    right: 0.24rem;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/indexjds2.css'%}">
+	<script src="{% static 'js/rem.js'%}"></script>
+</head>
+<body>
+	<header>
+		<div class="zhuangtai"></div>
+		<a href="{% url 'financing:myindex' %}"><img src="{% static 'img/return.png' %}" alt=""></a>
+		<div class="title"><span>我的银行卡</span></div>
+	</header>
+{% for item in wf %}
+	{% if item.bank == "交通银行" %}
+		{% for i in arr2 %}
+		<section class="section1">
+			<div class="box1">
+				<img src="{% static 'img/tds8.png'%}" alt="" width="100%" height="100%">
+			</div>
+			<div class="box2">
+				<p class="p1">{{ item.bank }}</p>
+				{% if item.card_lx == 0 %}
+				<p class="p2">储蓄卡</p>
+				{% elif item.card_lx == 1 %}
+				<p class="p2">信用卡</p>
+				{% endif %}
+				<span>****  ****  ****  {{ i }}</span>
+			</div>
+		</section>
+		{% endfor %}
+	{% elif item.bank == "建设银行" %}
+		{% for i in arr1 %}
+	<section class="section2">
+		<div class="box1">
+			<img src="{% static 'img/tds9.png'%}" alt="" width="100%" height="100%">
+		</div>
+		<div class="box2">
+			<p class="p1">{{ item.bank }}</p>
+			{% if item.card_lx == 0 %}
+			<p class="p2">储蓄卡</p>
+			{% elif item.card_lx == 1 %}
+			<p class="p2">信用卡</p>
+			{% endif %}
+			<span>****  ****  ****  {{ i }}</span>
+		</div>
+	</section>
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+	<button class="b1"><a href="" class="a1">添加银行卡</a></button>
+	<button class="b2"><a href="" class="a2">解绑银行卡</a></button>
+</body>
+</html>
